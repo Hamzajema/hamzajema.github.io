@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamza Jemaa - Software Engineer & Developer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #0f172a;
+            --secondary-color: #3b82f6;
+            --accent-color: #06b6d4;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+            --light-gray: #f8fafc;
+            --medium-gray: #64748b;
+            --dark-gray: #334155;
+            --white: #ffffff;
+            --gradient-primary: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            --gradient-accent: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: var(--dark-gray);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0%" stop-color="%233b82f6" stop-opacity="0.1"/><stop offset="100%" stop-color="%233b82f6" stop-opacity="0"/></radialGradient></defs><circle cx="50%" cy="50%" r="50%" fill="url(%23a)"/></svg>') center/cover;
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-image {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 4px solid var(--accent-color);
+            margin: 0 auto 2rem;
+            box-shadow: var(--shadow-xl);
+            background: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--primary-color);
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--white) 0%, var(--accent-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--gradient-accent);
+            color: var(--white);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--accent-color);
+        }
+
+        /* Contact Info */
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255, 255, 255, 0.8);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 5rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            margin-bottom: 6rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--medium-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(59, 130, 246, 0.1);
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .skill-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--light-gray);
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--dark-gray);
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .skill-tag:hover {
+            background: var(--secondary-color);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* Experience Section */
+        .experience-timeline {
+            position: relative;
+        }
+
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            left: 2rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--accent-color);
+        }
+
+        .experience-item {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-left: 5rem;
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: 1.25rem;
+            top: 0.5rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            background: var(--accent-color);
+            border-radius: 50%;
+            border: 4px solid var(--white);
+            box-shadow: var(--shadow-md);
+        }
+
+        .experience-header {
+            margin-bottom: 1rem;
+        }
+
+        .experience-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-company {
+            font-size: 1.1rem;
+            color: var(--secondary-color);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-date {
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+            background: var(--light-gray);
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .experience-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-tag {
+            font-size: 0.8rem;
+            padding: 0.25rem 0.75rem;
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--secondary-color);
+            border-radius: 12px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .experience-description ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .experience-description li {
+            margin-bottom: 0.75rem;
+            position: relative;
+            padding-left: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .experience-description li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        /* Education Section */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .education-item h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .education-institution {
+            color: var(--secondary-color);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-status {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: var(--success-color);
+            color: var(--white);
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-left: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 3rem 0 2rem;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 3rem;
+            height: 3rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .social-link:hover {
+            background: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--primary-color);
+                flex-direction: column;
+                padding: 1rem 2rem;
+                border-top: 1px solid rgba(59, 130, 246, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .experience-timeline::before {
+                left: 1rem;
+            }
+
+            .experience-item {
+                padding-left: 3rem;
+            }
+
+            .experience-item::before {
+                left: 0.25rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-container,
+            .container {
+                padding: 0 1rem;
+            }
+
+            .hero-content {
+                padding: 0 1rem;
+            }
+
+            .card {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Hamza Jemaa</a>
+            <div class="mobile-menu" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#experience">Experience</a>
+                <a href="#education">Education</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+<br><br>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="profile-image">
+                <img src="Photo hamza jemaa.jpg" alt="" width="150" height="150" style="border-radius: 50%;">
+            </div>
+            <h1>Hamza Jemaa</h1>
+            <p class="hero-subtitle">Software Engineer & Full-Stack Developer</p>
+            <p class="hero-description">
+                Passionate engineering student specializing in web development, business intelligence, and DevOps. 
+                Building scalable solutions and turning ideas into impactful digital experiences.
+            </p>
+            
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fas fa-envelope"></i>
+                    Get In Touch
+                </a>
+                <a href="#experience" class="btn btn-outline">
+                    <i class="fas fa-briefcase"></i>
+                    View My Work
+                </a>
+            </div>
+
+            <div class="contact-info" id="contact">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+216 51 075 734</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>jemahamza81@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Tunis, Tunisia</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- About Section -->
+            <section class="section" id="about">
+                <div class="section-header">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="section-subtitle">
+                        Engineering student with a passion for creating innovative digital solutions
+                    </p>
+                </div>
+                
+                <div class="card">
+                    <p>
+                        I am an engineering student specializing in Computer Science and Multimedia with strong 
+                        foundations in web development, Business Intelligence (BI), DevOps, and UX/UI design. 
+                        I excel at analyzing complex problems and providing logical, scalable solutions.
+                    </p>
+                    <br>
+                    <p>
+                        As a dedicated team player with a commitment to excellence, I strive to build secure, 
+                        scalable, and user-centric solutions. I thrive when collaborating with cross-functional 
+                        teams to deliver innovative and efficient digital products that make a real impact.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section class="section" id="skills">
+                <div class="section-header">
+                    <h2 class="section-title">Technical Skills</h2>
+                    <p class="section-subtitle">
+                        A comprehensive toolkit for modern software development
+                    </p>
+                </div>
+
+                <div class="skills-grid">
+                    <div class="card">
+                        <div class="skill-category">
+                            <h3><i class="fas fa-code"></i> Programming Languages</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">TypeScript</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">Java/JEE</span>
+                                <span class="skill-tag">PHP</span>
+                                <span class="skill-tag">C</span>
+                                <span class="skill-tag">SQL</span>
+                                <span class="skill-tag">HTML5</span>
+                                <span class="skill-tag">CSS3</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="skill-category">
+                            <h3><i class="fas fa-layer-group"></i> Frameworks & Libraries</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Angular</span>
+                                <span class="skill-tag">Vue.js 3</span>
+                                <span class="skill-tag">Node.js</span>
+                                <span class="skill-tag">Express.js</span>
+                                <span class="skill-tag">Flask</span>
+                                <span class="skill-tag">Bootstrap</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="skill-category">
+                            <h3><i class="fas fa-chart-bar"></i> BI & Data Tools</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Power BI</span>
+                                <span class="skill-tag">IBM SPSS</span>
+                                <span class="skill-tag">SSMS</span>
+                                <span class="skill-tag">SSIS</span>
+                                <span class="skill-tag">SSAS</span>
+                                <span class="skill-tag">Oracle</span>
+                                <span class="skill-tag">MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="skill-category">
+                            <h3><i class="fas fa-cloud"></i> DevOps & Cloud</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Docker</span>
+                                <span class="skill-tag">Apache Kafka</span>
+                                <span class="skill-tag">Keycloak</span>
+                                <span class="skill-tag">Git</span>
+                                <span class="skill-tag">Linux/Unix</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="skill-category">
+                            <h3><i class="fas fa-palette"></i> Design & Tools</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Figma</span>
+                                <span class="skill-tag">UX/UI Design</span>
+                                <span class="skill-tag">Prototyping</span>
+                                <span class="skill-tag">VS Code</span>
+                                <span class="skill-tag">Balsamic</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="skill-category">
+                            <h3><i class="fas fa-gamepad"></i> Game Development</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Unity</span>
+                                <span class="skill-tag">C#</span>
+                                <span class="skill-tag">Blender</span>
+                                <span class="skill-tag">Game AI</span>
+                                <span class="skill-tag">2D/3D Design</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section class="section" id="experience">
+                <div class="section-header">
+                    <h2 class="section-title">Professional Experience</h2>
+                    <p class="section-subtitle">
+                        Building impactful solutions across various domains
+                    </p>
+                </div>
+
+                <div class="experience-timeline">
+                    <div class="experience-item">
+                        <div class="card">
+                            <div class="experience-header">
+                                <h3 class="experience-title">Creator & Full-Stack Developer</h3>
+                                <p class="experience-company">Lion Editor - Freelance Project</p>
+                                <span class="experience-date">November 2024 - January 2025</span>
+                            </div>
+                            
+                            <div class="experience-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Flask</span>
+                                <span class="tech-tag">Angular</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">LXD</span>
+                                <span class="tech-tag">Keycloak</span>
+                                <span class="tech-tag">AI APIs</span>
+                            </div>
+                            
+                            <div class="experience-description">
+                                <ul>
+                                    <li>Developed Lion Editor, an online Python IDE enabling users to write, save, and execute code in secure LXD containers</li>
+                                    <li>Integrated AI assistance for code generation, correction, and explanation based on text/voice commands</li>
+                                    <li>Implemented web scraping to display real-time Python package suggestions from GitHub and Anaconda</li>
+                                    <li>Built microservices architecture for voice transcription, package classification, and error analysis</li>
+                                    <li>Created learning-focused features with instant feedback, execution results, and downloadable reports</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="card">
+                            <div class="experience-header">
+                                <h3 class="experience-title">BI Developer</h3>
+                                <p class="experience-company">Upgradetek Engineering - Internship</p>
+                                <span class="experience-date">January 2024 - May 2024</span>
+                            </div>
+                            
+                            <div class="experience-tech">
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">Express</span>
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Flask</span>
+                                <span class="tech-tag">Angular</span>
+                                <span class="tech-tag">Apache Kafka</span>
+                                <span class="tech-tag">Docker</span>
+                            </div>
+                            
+                            <div class="experience-description">
+                                <ul>
+                                    <li>Led development of end-to-end BI application for banking product management</li>
+                                    <li>Coordinated team tasks and streamlined project delivery processes</li>
+                                    <li>Implemented Docker containerization and secure Keycloak authentication</li>
+                                    <li>Integrated Big Data tools (Kafka) to enhance financial forecasting and analytics</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="card">
+                            <div class="experience-header">
+                                <h3 class="experience-title">Web Development Intern</h3>
+                                <p class="experience-company">Tunisair - Internship</p>
+                                <span class="experience-date">June 2023 - August 2023</span>
+                            </div>
+                            
+                            <div class="experience-tech">
+                                <span class="tech-tag">Flask</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">Bootstrap</span>
+                            </div>
+                            
+                            <div class="experience-description">
+                                <ul>
+                                    <li>Developed web application automating Excel bank statement transformation to AFB120 format</li>
+                                    <li>Collaborated with finance teams to align technical outputs with operational requirements</li>
+                                    <li>Reduced manual processing errors by 85% through automated data validation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="card">
+                            <div class="experience-header">
+                                <h3 class="experience-title">Game Developer & AI Programmer</h3>
+                                <p class="experience-company">2D Action-RPG Adventure Game - Personal Project</p>
+                                <span class="experience-date">October 2024 - January 2025</span>
+                            </div>
+                            
+                            <div class="experience-tech">
+                                <span class="tech-tag">Unity</span>
+                                <span class="tech-tag">C#</span>
+                                <span class="tech-tag">Blender</span>
+                                <span class="tech-tag">Game AI</span>
+                                <span class="tech-tag">UI/UX</span>
+                            </div>
+                            
+                            <div class="experience-description">
+                                <ul>
+                                    <li>Designed and developed 2D action-RPG with five playable characters and level progression</li>
+                                    <li>Implemented enemy AI with dynamic chase behavior and real-time combat systems</li>
+                                    <li>Built custom UI menus for player stats, inventory, and character management</li>
+                                    <li>Created three complex levels with unique mechanics and interactive environments</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="card">
+                            <div class="experience-header">
+                                <h3 class="experience-title">BI Dashboard Developer</h3>
+                                <p class="experience-company">Adventure Work - Freelance</p>
+                                <span class="experience-date">February 2023 - April 2023</span>
+                            </div>
+                            
+                            <div class="experience-tech">
+                                <span class="tech-tag">Microsoft SQL Server</span>
+                                <span class="tech-tag">SSIS</span>
+                                <span class="tech-tag">SSAS</span>
+                                <span class="tech-tag">Power BI</span>
+                            </div>
+                            
+                            <div class="experience-description">
+                                <ul>
+                                    <li>Developed strategic HR dashboards to improve resource management and decision-making</li>
+                                    <li>Collaborated with senior data engineers in preparing data models using SSAS</li>
+                                    <li>Created comprehensive KPI visualizations in Power BI for executive reporting</li>
+                                    <li>Streamlined HR analytics processes reducing report generation time by 60%</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="card">
+                            <div class="experience-header">
+                                <h3 class="experience-title">Java Developer & AI Integrator</h3>
+                                <p class="experience-company">Chinese Restaurant Management System - Training Project</p>
+                                <span class="experience-date">April 2025 - May 2025</span>
+                            </div>
+                            
+                            <div class="experience-tech">
+                                <span class="tech-tag">Java</span>
+                                <span class="tech-tag">Swing</span>
+                                <span class="tech-tag">AI APIs</span>
+                                <span class="tech-tag">SQLite</span>
+                                <span class="tech-tag">Nutrition APIs</span>
+                            </div>
+                            
+                            <div class="experience-description">
+                                <ul>
+                                    <li>Designed desktop application for restaurant order management and customer interactions</li>
+                                    <li>Integrated AI APIs to provide real-time nutritional analysis and calorie estimation</li>
+                                    <li>Built user-friendly Java Swing interface for order tracking and menu navigation</li>
+                                    <li>Implemented SQLite database for persistent management of dishes, orders, and ingredients</li>
+                                    <li>Enhanced customer experience with smart dietary suggestions and traditional order management</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="card">
+                            <div class="experience-header">
+                                <h3 class="experience-title">Turn-Based Strategy Game Developer</h3>
+                                <p class="experience-company">Guerre des Clans - Freelance Project</p>
+                                <span class="experience-date">March 2025 - May 2025</span>
+                            </div>
+                            
+                            <div class="experience-tech">
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">HTML5</span>
+                                <span class="tech-tag">CSS3</span>
+                                <span class="tech-tag">AI Pathfinding</span>
+                                <span class="tech-tag">Game Logic</span>
+                            </div>
+                            
+                            <div class="experience-description">
+                                <ul>
+                                    <li>Developed turn-based strategy game with 10x10 grid battlefield and three unique unit types</li>
+                                    <li>Implemented sophisticated enemy AI featuring pathfinding, decision-making, and player pursuit</li>
+                                    <li>Built structured game loop system managing unit selection, combat logic, and turn transitions</li>
+                                    <li>Created XP progression system and ability unlocking for enhanced gameplay depth</li>
+                                    <li>Designed intuitive UI for displaying turns, health, attack stats, and action availability</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="card">
+                            <div class="experience-header">
+                                <h3 class="experience-title">UI/UX Designer</h3>
+                                <p class="experience-company">TuniTrack Heritage Tourism App - Freelance</p>
+                                <span class="experience-date">February 2025 - May 2025</span>
+                            </div>
+                            
+                            <div class="experience-tech">
+                                <span class="tech-tag">Figma</span>
+                                <span class="tech-tag">Adobe XD</span>
+                                <span class="tech-tag">UX Research</span>
+                                <span class="tech-tag">Prototyping</span>
+                                <span class="tech-tag">VR Design</span>
+                            </div>
+                            
+                            <div class="experience-description">
+                                <ul>
+                                    <li>Designed comprehensive UI/UX prototype for Tunisian heritage tourism platform</li>
+                                    <li>Integrated immersive VR tours and game-like navigation with cultural storytelling</li>
+                                    <li>Created multilingual user flows with adaptive accessibility features</li>
+                                    <li>Optimized user journey across mobile and desktop with intuitive navigation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="card">
+                            <div class="experience-header">
+                                <h3 class="experience-title">Full-Stack Web Developer</h3>
+                                <p class="experience-company">CrocoCoder Match Tracking App - Training Project</p>
+                                <span class="experience-date">March 2023 - May 2023</span>
+                            </div>
+                            
+                            <div class="experience-tech">
+                                <span class="tech-tag">Angular</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">Express.js</span>
+                                <span class="tech-tag">TypeScript</span>
+                                <span class="tech-tag">Bootstrap</span>
+                            </div>
+                            
+                            <div class="experience-description">
+                                <ul>
+                                    <li>Built real-time match tracking application for public-facing sports platforms</li>
+                                    <li>Implemented mobile-first responsive design improving user engagement by 30%</li>
+                                    <li>Developed RESTful APIs for live data synchronization and match statistics</li>
+                                    <li>Optimized front-end performance resulting in positive user feedback from beta testing</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education Section -->
+            <section class="section" id="education">
+                <div class="section-header">
+                    <h2 class="section-title">Education & Training</h2>
+                    <p class="section-subtitle">
+                        Building a strong foundation in computer science and business
+                    </p>
+                </div>
+
+                <div class="education-grid">
+                    <div class="card">
+                        <h3>Engineering Degree in Computer Science and Multimedia 
+                            <span class="education-status">In Progress</span>
+                        </h3>
+                        <p class="education-institution">ISAMM, University of Manouba</p>
+                        <p class="education-date">2024 - 2027</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Bachelor's in Business Computing (BI)</h3>
+                        <p class="education-institution">FSEGT Manar University</p>
+                        <p class="education-date">2021 - 2024</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Baccalaureate in Mathematics</h3>
+                        <p class="education-institution">Lycée Secondaire Cité Ibn Khaldoun</p>
+                        <p class="education-date">2020 - 2021</p>
+                    </div>
+                </div>
+
+                <!-- Additional Training -->
+                <div class="section-header" style="margin-top: 4rem; margin-bottom: 2rem;">
+                    <h3 style="font-size: 2rem; color: var(--primary-color);">Professional Training</h3>
+                </div>
+
+                <div class="card">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                        <div>
+                            <h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">2023</h4>
+                            <p>MEAN Stack Training (Node.js, Angular, Express.js)</p>
+                            <small style="color: var(--medium-gray);">CrocoCoder</small>
+                        </div>
+                        
+                        <div>
+                            <h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">2023</h4>
+                            <p>Digital Community Currencies Training</p>
+                            <small style="color: var(--medium-gray);">Berlin School of Economics and Law</small>
+                        </div>
+                        
+                        <div>
+                            <h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">2022-2023</h4>
+                            <p>Digital Marketing Training</p>
+                            <small style="color: var(--medium-gray);">Université Centrale</small>
+                        </div>
+                        
+                        <div>
+                            <h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">2021-2022</h4>
+                            <p>Python, Big Data, and Data Science Training</p>
+                            <small style="color: var(--medium-gray);">Self-directed Learning</small>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Languages and Soft Skills -->
+            <section class="section">
+                <div class="section-header">
+                    <h2 class="section-title">Languages & Core Competencies</h2>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <div class="card">
+                        <h3 style="color: var(--primary-color); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-language"></i> Languages
+                        </h3>
+                        <div style="display: flex; flex-direction: column; gap: 1rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>French</span>
+                                <span style="color: var(--success-color); font-weight: 600;">Fluent</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>English</span>
+                                <span style="color: var(--success-color); font-weight: 600;">Professional</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>Arabic</span>
+                                <span style="color: var(--success-color); font-weight: 600;">Native</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 style="color: var(--primary-color); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-lightbulb"></i> Core Strengths
+                        </h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Problem Solving</span>
+                            <span class="skill-tag">Team Leadership</span>
+                            <span class="skill-tag">Critical Thinking</span>
+                            <span class="skill-tag">Project Management</span>
+                            <span class="skill-tag">Communication</span>
+                            <span class="skill-tag">Adaptability</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://github.com/Hamzajema" class="social-link" target="_blank" rel="noopener">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/jemaa-hamza" class="social-link" target="_blank" rel="noopener">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:jemahamza81@gmail.com" class="social-link">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            
+            <p style="margin-bottom: 1rem; opacity: 0.9;">
+                Let's build something amazing together
+            </p>
+            
+            <p style="font-size: 0.9rem; opacity: 0.7;">
+                &copy; 2025 Hamza Jemaa. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                // Close mobile menu if open
+                document.getElementById('navLinks').classList.remove('active');
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    const headerOffset = 80;
+                    const elementPosition = targetElement.offsetTop;
+                    const offsetPosition = elementPosition - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Navbar background change on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(15, 23, 42, 0.98)';
+                navbar.style.boxShadow = '0 4px 6px -1px rgb(0 0 0 / 0.1)';
+            } else {
+                navbar.style.background = 'rgba(15, 23, 42, 0.95)';
+                navbar.style.boxShadow = 'none';
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and sections
+        document.addEventListener('DOMContentLoaded', () => {
+            const elementsToAnimate = document.querySelectorAll('.card, .experience-item');
+            elementsToAnimate.forEach(el => observer.observe(el));
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            const navLinks = document.getElementById('navLinks');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            if (!navLinks.contains(e.target) && !mobileMenu.contains(e.target)) {
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // Typing effect for hero subtitle (optional enhancement)
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            
+            type();
+        }
+
+        // Add loading animation
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '1';
+        });
+    </script>
+</body>
+</html>
