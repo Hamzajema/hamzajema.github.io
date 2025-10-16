@@ -858,6 +858,38 @@
         </div>
     </div>
 </div>
+<div class="experience-item">
+    <div class="card">
+        <div class="experience-header">
+            <h3 class="experience-title">Creator & Lead Developer</h3>
+            <p class="experience-company">Tunisia Legal Q&A System — Hackathon Project</p>
+            <span class="experience-date">December 2024 - January 2025</span>
+        </div>
+
+        <div class="experience-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Flask</span>
+            <span class="tech-tag">Transformers</span>
+            <span class="tech-tag">Sentence-BERT</span>
+            <span class="tech-tag">pdfplumber / PyPDF2</span>
+            <span class="tech-tag">FAISS</span>
+            <span class="tech-tag">CUDA / PyTorch</span>
+            <span class="tech-tag">HTML/CSS/JS</span>
+        </div>
+
+        <div class="experience-description">
+            <ul>
+                <li>Built a Retrieval-Augmented Generation (RAG) system to answer Tunisian legal questions (business law, startups, regulations) using only local models — no external API keys required.</li>
+                <li>Implemented PDF processing pipeline (pdfplumber / PyPDF2) to extract, chunk (800 chars, overlap), embed (all-MiniLM-L6-v2) and cache document vectors for fast retrieval.</li>
+                <li>Developed semantic search + ranking (cosine similarity, top-K) with source citations (file + page) so each answer includes provenance and confidence scores.</li>
+                <li>Integrated optional LLM generation (Phi-2) for AI-enhanced answers with multi-language prompts (EN/FR/AR) and graceful degradation when LLMs are disabled.</li>
+                <li>Delivered a modern web front-end (responsive chat UI) and a Flask REST API (endpoints: /ask, /search, /health, /stats, /reload) for easy integration and demoing.</li>
+                <li>Optimized for GPU inference (CUDA, quantization options) and provided configuration for CPU-only modes to fit diverse hardware.</li>
+                <li>Prioritized privacy and security — all processing runs locally, PDFs never leave the machine; added recommendations for auth, HTTPS, and rate limiting for production.</li>
+            </ul>
+        </div>
+    </div>
+</div>
 
 
                     <div class="experience-item">
@@ -1342,6 +1374,7 @@
 </body>
 
 </html>
+
 
 
 
