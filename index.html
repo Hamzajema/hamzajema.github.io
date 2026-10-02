@@ -109,8 +109,50 @@ footer{text-align:center;color:#6b7280;font-size:15px;padding:50px 0 80px}
 .tgs{position:absolute;top:14px;left:14px;display:flex;gap:6px;z-index:2}
 .tg{padding:4px 11px;border-radius:99px;font-size:12px;font-weight:700;letter-spacing:.04em;background:rgba(5,10,18,.78);border:1px solid #fff4}
 .tg.xr{color:#6cc6ff}.tg.ai{color:#c4b0ff}.tg.web{color:#7ee7b7}.tg.game{color:#ffcf75}
+
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;max-width:1120px;margin:56px auto 0}
+.sk{border:1px solid var(--bd);border-radius:26px;background:var(--cd);padding:28px}
+.sk h3{font-size:20px;font-weight:700;margin-bottom:16px;display:flex;gap:10px;align-items:center}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tags span{padding:6px 14px;border-radius:99px;font-size:14px;font-weight:500;background:#0a1830;border:1px solid var(--bd);color:#cfe0f5;transition:.2s}
+.tags span:hover{border-color:var(--bl);color:#fff}
+.tl{max-width:1000px;margin:auto;position:relative;padding-left:34px}
+.tl:before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--bl),var(--ai),transparent)}
+.ex{position:relative;border:1px solid var(--bd);border-radius:26px;background:var(--cd);padding:28px 32px;margin-bottom:24px}
+.ex:before{content:"";position:absolute;left:-34px;top:34px;width:18px;height:18px;border-radius:50%;background:var(--bg);border:3px solid var(--bl)}
+.ex.now:before{background:var(--g);border-color:#fff3;box-shadow:0 0 0 5px rgba(47,168,255,.2)}
+.ex h3{font-size:24px;font-weight:700;line-height:1.25}
+.ex .co{color:var(--bl);font-weight:500;font-size:18px;margin-top:2px}
+.ex .dt{display:inline-block;margin:10px 0 12px;background:#12304a;border-radius:99px;padding:3px 14px;font-size:14px;font-weight:600}
+.ex .dt.nw{background:var(--g)}
+.ex ul,.mb ul{list-style:none;padding:0;display:grid;gap:9px;margin-top:14px}
+.ex li,.mb li{position:relative;padding-left:24px;color:#d8dee9;font-size:16.5px}
+.ex li:before,.mb li:before{content:"▸";position:absolute;left:0;color:var(--bl)}
+.mb .tags{margin:4px 0 14px}
+.eg{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;max-width:1120px;margin:auto}
+.ed{border:1px solid var(--bd);border-radius:26px;background:var(--cd);padding:26px 28px}
+.ed h3{font-size:21px;font-weight:600;line-height:1.3}.ed .co{color:var(--bl);margin:4px 0}
+.ed .yr{display:inline-block;margin-top:8px}
+.st2{font-size:30px;font-weight:700;text-align:center;margin:64px 0 28px}
+.trg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;max-width:1120px;margin:auto}
+.tr{border:1px solid var(--bd);border-radius:20px;background:var(--cd);padding:18px 22px}
+.tr b{color:var(--bl);font-size:14px;font-weight:600}.tr p{font-size:16.5px;line-height:1.4;margin:4px 0 2px}.tr small{color:var(--mu);font-size:14px}
+.lg{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #16304a;font-size:17px}.lg:last-child{border:0}.lg span{color:#7ee7b7;font-weight:600}
+.cm{display:grid;gap:14px}.cm b{display:block;font-size:17px}.cm small{color:var(--mu);font-size:15px}
+@media(max-width:640px){.tl{padding-left:26px}.ex{padding:22px}.ex:before{left:-26px}}
+.gl{position:relative;margin-bottom:16px}
+.gl .sl{border-radius:20px;overflow:hidden;background:#050a12;aspect-ratio:16/9;display:grid;place-items:center}
+.gl iframe,.gl .sl img{width:100%;height:100%;border:0;margin:0;border-radius:0;aspect-ratio:auto;object-fit:contain;display:block}
+.gl .ar{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;border:1px solid #fff5;background:rgba(5,10,18,.75);color:#fff;font-size:24px;cursor:pointer;z-index:2;line-height:1}
+.gl .ar:hover{border-color:var(--bl);color:var(--bl)}.gl .pv{left:10px}.gl .nx{right:10px}
+.gl .th{display:flex;gap:8px;margin-top:10px;overflow-x:auto;padding-bottom:4px}
+.gl .th button{flex:none;width:76px;height:50px;border-radius:10px;border:2px solid transparent;background:#0a1220 center/cover;cursor:pointer;position:relative;padding:0;opacity:.6}
+.gl .th button.on{border-color:var(--bl);opacity:1}
+.gl .th button.vd:after{content:"▶";position:absolute;inset:0;display:grid;place-items:center;color:#fff;font-size:15px;text-shadow:0 0 6px #000}
+.gl .cn{position:absolute;right:12px;top:12px;background:rgba(5,10,18,.75);border-radius:99px;padding:2px 11px;font-size:13px;z-index:2}
+.cd .bg{position:absolute;right:12px;bottom:12px;background:rgba(5,10,18,.78);border:1px solid #fff4;border-radius:99px;padding:3px 11px;font-size:12px;font-weight:600;z-index:2}
 @media(max-width:980px){.xg{grid-template-columns:1fr}}
-@media(max-width:980px){.cg{grid-template-columns:1fr 1fr}.ab{grid-template-columns:1fr;padding:32px;text-align:center}.ph{margin:auto;width:240px;height:240px}.sts{justify-content:center}nav div{gap:16px;font-size:14px}nav div a:nth-child(n+4){display:none}}
+@media(max-width:980px){.cg{grid-template-columns:1fr 1fr}.ab{grid-template-columns:1fr;padding:32px;text-align:center}.ph{margin:auto;width:240px;height:240px}.sts{justify-content:center}nav div{gap:16px;font-size:14px}nav div a:nth-child(n+4){display:none}nav div a:nth-child(-n+3){display:inline}}
 @media(max-width:640px){.cg{grid-template-columns:1fr}.hero p{font-size:18px}.bt{padding:16px 34px;font-size:17px}}
 @media(prefers-reduced-motion:reduce){.row div,.ms::after{animation:none}*{transition:none!important}}
 </style>
@@ -118,7 +160,7 @@ footer{text-align:center;color:#6b7280;font-size:15px;padding:50px 0 80px}
 <body>
 <canvas id="st"></canvas><div id="sb"></div>
 <nav id="nv"><a href="#home" aria-label="Home"><svg viewBox="0 0 46 26" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M9 2h28c4 0 7 3 7 8v3c0 4-3 7-7 7-4 0-5-2-8-3-3-1-9-1-12 0-3 1-4 3-8 3-4 0-6-3-6-7v-3C3 5 5 2 9 2z"/></svg></a>
-<div><a href="#home">Home</a><a href="#about">About</a><a href="#expertise">Expertise</a><a href="#skills">Skills</a><a href="#achievements">Achievements</a><a href="#projects">Projects</a><a href="#hackathons">Hackathons</a><a href="#contact">Contact</a></div></nav>
+<div><a href="#home">Home</a><a href="#about">About</a><a href="#expertise">Expertise</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#achievements">Achievements</a><a href="#projects">Projects</a><a href="#hackathons">Hackathons</a><a href="#contact">Contact</a></div></nav>
 
 <main>
 <section class="hero" id="home"><div>
@@ -135,10 +177,11 @@ footer{text-align:center;color:#6b7280;font-size:15px;padding:50px 0 80px}
   <div class="ab">
     <div class="ph"><img src="Hamza%20Jemaa.jpeg" alt="Hamza Jemaa" onerror="this.outerHTML='<i>HJ</i>'"></div>
     <div><h3>Hamza Jemaa</h3><div class="r">Software Engineer, XR & AI Creator</div>
-      <p>Focused on XR (VR/AR) and artificial intelligence — computer vision, reinforcement learning and RAG — plus full-stack development. Engineering student in Computer Science and Multimedia at ISAMM (2027), Best Graduation Project Award 2024.</p>
+      <p>Focused on XR (VR/AR) and artificial intelligence — computer vision, reinforcement learning and RAG — plus full-stack development. Engineering student in Computer Science and Multimedia at ISAMM (2027), with strong foundations in web development, Business Intelligence, DevOps and UX/UI design.</p>
+      <p style="margin-top:14px">I analyse complex problems and build secure, scalable, user-centric solutions, and I thrive in cross-functional teams. Ranked among the top students of my class, with hands-on experience in VR simulation, reinforcement learning and LLM / RAG. Best Graduation Project Award 2024.</p>
       <q>"Real problems deserve immersive, intelligent solutions."</q>
-      <div class="sts"><div><b>16+</b><span>Projects</span></div><div><b>4</b><span>Awards</span></div><div><b>3</b><span>Internships</span></div><div><b>2027</b><span>Engineer degree</span></div></div>
-      <a class="bt p" style="margin:0" href="CV_Hamza_Jemaa_FR_FULLCV.html" target="_blank">Check my Resume</a></div>
+      <div class="sts"><div><b>16+</b><span>Projects</span></div><div><b>5</b><span>Awards</span></div><div><b>4</b><span>Internships</span></div><div><b>2027</b><span>Engineer degree</span></div></div>
+      <a class="bt p" style="margin:0" href="Hamza Jemaa Resume   EN.html" target="_blank">Check my Resume</a></div>
   </div>
 </div></section>
 
@@ -165,12 +208,23 @@ footer{text-align:center;color:#6b7280;font-size:15px;padding:50px 0 80px}
 <section id="skills"><div class="w">
   <h2>Technical <span class="g">Skills</span></h2><p class="sub">My toolbox for creating digital experiences</p>
   <div class="row"><div id="r1"></div></div><div class="row rv"><div id="r2"></div></div>
+  <div class="sg">
+    <div class="sk"><h3>💻 Programming Languages</h3><div class="tags"><span>JavaScript</span><span>TypeScript</span><span>Python</span><span>Java/JEE</span><span>PHP</span><span>C</span><span>C++</span><span>C#</span><span>SQL</span><span>NoSQL</span><span>VB.NET</span><span>HTML5</span><span>CSS3</span></div></div>
+    <div class="sk"><h3>🧩 Frameworks &amp; Libraries</h3><div class="tags"><span>Angular</span><span>Vue.js 3</span><span>Node.js</span><span>Express.js</span><span>React</span><span>Flask</span><span>Bootstrap</span><span>FastAPI</span></div></div>
+    <div class="sk"><h3>🧊 3D, Graphics &amp; Computer Vision</h3><div class="tags"><span>Three.js</span><span>WebGL</span><span>OpenGL</span><span>GLSL</span><span>MediaPipe</span><span>OpenCV</span><span>WebRTC</span><span>SUMO</span><span>Gaussian Splatting</span><span>GLFW / GLAD</span></div></div>
+    <div class="sk"><h3>🧠 AI &amp; Machine Learning</h3><div class="tags"><span>Scikit-learn</span><span>Stable-Baselines3 (PPO)</span><span>Sentence-BERT</span><span>FAISS</span><span>Transformers</span><span>Pandas</span><span>NumPy</span><span>PyTorch</span><span>LangChain</span><span>LangGraph</span><span>RAG</span><span>LLM</span><span>NLP</span></div></div>
+    <div class="sk"><h3>🎮 Game &amp; XR Development</h3><div class="tags"><span>Unity 3D / Unity 6</span><span>Blender</span><span>Game AI</span><span>2D/3D Design</span><span>Meta Quest 3 (VR)</span><span>Meta XR SDK</span><span>OpenXR</span><span>XR Interaction Toolkit</span></div></div>
+    <div class="sk"><h3>☁️ DevOps &amp; Cloud</h3><div class="tags"><span>Docker</span><span>Apache Kafka</span><span>Keycloak</span><span>Git</span><span>Linux/Unix</span><span>LXD</span><span>ZeroMQ</span><span>AWS</span><span>JWT</span><span>OWASP</span></div></div>
+    <div class="sk"><h3>📊 BI &amp; Data Tools</h3><div class="tags"><span>Power BI</span><span>IBM SPSS</span><span>SSMS</span><span>SSIS</span><span>SSAS</span><span>Oracle</span><span>MongoDB</span><span>SQLite</span></div></div>
+    <div class="sk"><h3>🎨 Design &amp; Tools</h3><div class="tags"><span>Figma</span><span>Adobe XD</span><span>UX/UI Design</span><span>Prototyping</span><span>VS Code</span><span>Balsamiq</span></div></div>
+  </div>
   <hr>
 </div></section>
 
-<section id="achievements"><div class="w">
-  <h2>My <span class="g">Achievements</span></h2><p class="sub">Milestones and recognitions throughout my journey.</p>
-  <div class="cg" id="ach"></div><button class="sm" id="am">Show More Achievements</button><hr>
+
+<section id="experience"><div class="w">
+  <h2>Professional <span class="g">Experience</span></h2><p class="sub">Internships, roles and freelance work across XR, AI and web.</p>
+  <div class="tl" id="ex"></div><button class="sm" id="exb">Show More Experience</button><hr>
 </div></section>
 
 <section id="projects"><div class="w">
@@ -179,6 +233,43 @@ footer{text-align:center;color:#6b7280;font-size:15px;padding:50px 0 80px}
   <div class="cg" id="pj"></div><button class="sm" id="pm">Show More Projects</button><hr>
 </div></section>
 
+<section id="education"><div class="w">
+  <h2>Education &amp; <span class="g">Training</span></h2><p class="sub">A strong foundation in computer science, multimedia and business.</p>
+  <div class="eg">
+    <div class="ed"><h3>Engineering Degree in Computer Science and Multimedia</h3><div class="co">ISAMM, University of Manouba</div><span class="yr">2024 – 2027 · In progress</span></div>
+    <div class="ed"><h3>Bachelor's in Business Computing (BI)</h3><div class="co">FSEGT, Manar University</div><span class="yr">2021 – 2024</span></div>
+    <div class="ed"><h3>Baccalaureate in Mathematics</h3><div class="co">Lycée Secondaire Cité Ibn Khaldoun</div><span class="yr">2020 – 2021</span></div>
+  </div>
+  <div class="st2">Professional <span class="g">Training</span></div>
+  <div class="trg" id="trn"></div><button class="sm" id="trb">Show More Training</button>
+  <hr>
+</div></section>
+
+<section id="community"><div class="w">
+  <h2>Community &amp; <span class="g">More</span></h2><p class="sub">Workshops, student involvement, languages and interests.</p>
+  <div class="sg" style="margin-top:0">
+    <div class="sk"><h3>🏆 Award</h3><b>Best Graduation Project Award</b><br><small style="color:var(--mu)">Prix du Meilleur Projet de Fin d'Études — 2024</small></div>
+    <div class="sk"><h3>🎤 Workshops Delivered</h3><div class="cm"><b>New trends and research directions in computer science</b><b>Python for Data Analysis</b></div></div>
+    <div class="sk"><h3>👥 Community Involvement</h3><div class="cm">
+      <div><b>Club Robotique ISAMM</b><small>Deputy President</small></div>
+      <div><b>Google Developer Student Club (GDSC)</b><small>Member — Marketing Team</small></div>
+      <div><b>ATUTAX</b><small>Member</small></div>
+      <div><b>Tunisian Red Crescent — Omrane Supérieur Committee</b><small>Member</small></div></div></div>
+    <div class="sk"><h3>🌍 Languages</h3>
+      <div class="lg">French<span>Fluent</span></div><div class="lg">English<span>Professional</span></div><div class="lg">Arabic<span>Native</span></div><div class="lg">German<span>Beginner</span></div></div>
+    <div class="sk"><h3>💡 Core Strengths</h3><div class="tags"><span>Problem Solving</span><span>Team Leadership</span><span>Critical Thinking</span><span>Project Management</span><span>Communication</span><span>Adaptability</span></div></div>
+    <div class="sk"><h3>❤️ Interests</h3><div class="tags"><span>Camping</span><span>Problem Solving</span><span>Reading</span></div></div>
+  </div>
+  <hr>
+</div></section>
+
+<section id="achievements"><div class="w">
+  <h2>My <span class="g">Achievements</span></h2><p class="sub">Milestones and recognitions throughout my journey.</p>
+  <div class="cg" id="ach"></div><button class="sm" id="am">Show More Achievements</button><hr>
+</div></section>
+
+
+
 <section id="hackathons"><div class="w">
   <h2>My <span class="g">Hackathons</span></h2><p class="sub">Competitive Innovation and Creative Problem Solving</p>
   <div class="cg" id="hk"></div><hr>
@@ -186,7 +277,7 @@ footer{text-align:center;color:#6b7280;font-size:15px;padding:50px 0 80px}
 
 <section id="contact"><div class="w">
   <h2>Get In <span class="g">Touch</span></h2><p class="sub">Have a project in mind or just want to say hi? I'd love to hear from you.</p>
-  <div class="ct"><a class="ci" href="mailto:jemahamza81@gmail.com"><i>✉</i><div><b>Email</b><span>jemahamza81@gmail.com</span></div></a><a class="ci" href="tel:+21651075734"><i>✆</i><div><b>Phone</b><span>+216 51 075 734</span></div></a></div>
+  <div class="ct"><a class="ci" href="mailto:jemahamza81@gmail.com"><i>✉</i><div><b>Email</b><span>jemahamza81@gmail.com</span></div></a><a class="ci" href="tel:+21651075734"><i>✆</i><div><b>Phone</b><span>+216 51 075 734</span></div></a><div class="ci"><i>⌖</i><div><b>Location</b><span>Tunis, Tunisia</span></div></div></div>
   <div class="so"><a href="https://linkedin.com/in/jemaa-hamza" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/Hamzajema" target="_blank" rel="noopener">GitHub</a></div>
   <footer>© 2026 Hamza Jemaa</footer>
 </div></section>
@@ -195,33 +286,34 @@ footer{text-align:center;color:#6b7280;font-size:15px;padding:50px 0 80px}
 <div id="m" role="dialog" aria-modal="true"><div class="mb"><button class="x" aria-label="Close">×</button><div id="mc"></div></div></div>
 
 <script>
-/* ===== EDIT ===== media: YouTube link (https://youtu.be/xxxx) or image path (assets/pic.jpg). "" = colored cover.
+/* ===== EDIT ===== imgs:["assets/a.jpg","assets/b.jpg"] = photo gallery (first one is the card cover, shown with the video in the popup, with ‹ › arrows). media: YouTube link (https://youtu.be/xxxx) or image path (assets/pic.jpg). "" = colored cover.
    Fields: c category (xr ai web game), t title, y year, o organisation | type, d description, h cover hue */
 const PJ=[
-{c:"xr ai",t:"4D Gaussian Splatting",y:2026,o:"SARAAB XR Studio | 4D Reconstruction",d:"Adapted the LGM model to a 4-depth-camera rig for human Gaussian reconstructions, plus a Three.js point-cloud editor with RANSAC cleanup and AI-assisted selection.",h:265,media:""},
-{c:"xr ai",t:"VR Traffic Police Training",y:2026,o:"ONSR / Ministry of Interior / UN | Serious Game",d:"Real Bardo roundabout from OpenStreetMap, SUMO coupled to Unity in real time, and a PPO reinforcement-learning agent that scores officer decisions live on Meta Quest.",h:190,media:"https://youtu.be/Go9OZ5fkyWE?si=OZIFULSmLZtXyh3Y"},
-{c:"xr",t:"Aquaverse",y:2026,o:"ATUTAX | VR Experience",d:"Unity 6 VR experience on marine depollution contrasting destructive and good methods, with Blender-made Posidonia, fauna and in-VR comparison videos.",h:195,media:"https://youtu.be/34VKFbzN1ds?si=TtJpE-pld1wo9X8m"},
+{c:"xr ai",t:"4D Gaussian Splatting",y:2026,o:"SARAAB XR Studio | 4D Reconstruction",d:"Adapted the LGM model to a 4-depth-camera rig for human Gaussian reconstructions, plus a Three.js point-cloud editor with RANSAC cleanup and AI-assisted selection.",h:265,media:"https://youtu.be/_mgDK336VCQ"},
+{c:"xr ai",t:"VR Traffic Police Training",y:2026,o:"ONSR / Ministry of Interior / UN | Serious Game",d:"Real Bardo roundabout from OpenStreetMap, SUMO coupled to Unity in real time, and a PPO reinforcement-learning agent that scores officer decisions live on Meta Quest.",h:190,media:"https://youtu.be/Go9OZ5fkyWE?si=OZIFULSmLZtXyh3Y",imgs:["onsr3.jpeg","onsr2.jpeg"]},
+{c:"xr",t:"Aquaverse",y:2026,o:"ATUTAX | VR Experience",d:"Unity 6 VR experience on marine depollution contrasting destructive and good methods, with Blender-made Posidonia, fauna and in-VR comparison videos.",h:195,media:"https://youtu.be/34VKFbzN1ds?si=TtJpE-pld1wo9X8m",imgs:["Screenshot 2026-10-02 221109.png"]},
 {c:"xr",t:"Urban VR Simulator",y:2026,o:"Personal | VR Simulation",d:"A complete virtual city with Tunisian buses modelled from photos, live traffic, and a VR bus ticketing application on Meta Quest 3.",h:215,media:"https://youtu.be/cfjWkN0x3u0?si=E4I3Eun5UXF9NE1n"},
-{c:"xr web",t:"Hajj Simulation",y:2025,o:"Personal | WebGL Experience",d:"Immersive 3D pilgrimage in the browser with 10+ guided rituals, a VR mode and real-time multiplayer avatars over WebRTC.",h:40,media:"https://youtu.be/vgAuCGKVSls?si=lKa0tEHkyt91P3QD"},
+{c:"xr web",t:"Hajj Simulation",y:2025,o:"Personal | WebGL Experience",d:"Immersive 3D pilgrimage in the browser with 10+ guided rituals, a VR mode and real-time multiplayer avatars over WebRTC.",h:40,media:"https://youtu.be/vgAuCGKVSls?si=lKa0tEHkyt91P3QD",imgs:["Screenshot 2026-10-02 223451.png","Screenshot 2026-10-02 223424.png"]},
 {c:"xr ai",t:"3D Avatar Motion Transfer",y:2025,o:"Personal | Motion Capture",d:"Real-time webcam pose (33 MediaPipe landmarks) transferred to a rigged 3D avatar through a custom inverse-kinematics pipeline.",h:300,media:"https://youtu.be/Z89xXZIScB4?si=Q8sdj7Qr57g3Dbik"},
 {c:"ai web",t:"Lion Editor",y:2025,o:"Personal | AI Web IDE",d:"Online Python IDE running code in isolated LXD containers, with voice and text AI assistance, Keycloak auth and microservices.",h:155,media:""},
 {c:"ai",t:"Employee Monitoring",y:2025,o:"Academic | Computer Vision",d:"Real-time attention and posture tracking with face recognition, liveness detection and privacy-friendly processing.",h:340,media:"https://youtu.be/ZyNojTeNOVM?si=4iYqw8I8Uaq5kBQF"},
-{c:"ai",t:"Tunisia Legal Q&A",y:2025,o:"astroPreneur Hackathon | RAG",d:"Fully local RAG assistant answering Tunisian legal questions in French, English and Arabic from PDF sources.",h:20,media:""},
+{c:"ai",t:"Tunisia Legal Q&A",y:2025,o:"astroPreneur Hackathon | RAG",d:"Fully local RAG assistant answering Tunisian legal questions in French, English and Arabic from PDF sources.",h:20,media:"https://youtu.be/AdX-o5nRwtA?si=TAqka0dxVwocohGi",imgs:["1766056550786.jpg"]},
 {c:"ai",t:"AI Video Processing",y:2025,o:"Personal | Computer Vision",d:"Parallel chunked pipeline for edge, motion, face and object analysis with live analytics dashboards.",h:120,media:"https://youtu.be/m3Ru-IAbmzU?si=t6YgTVmnVjrQyr1M"},
 {c:"ai web",t:"Tunisair Dashboard",y:2024,o:"Tunisair | Decision Support",d:"JWT-secured Flask API, Angular UI, Oracle database and a Scikit-learn module forecasting revenue and route profitability.",h:205,media:""},
 {c:"ai web",t:"Study Notebook App",y:2025,o:"Personal | Web App",d:"Notes app with AI summaries, quiz generation, theme extraction and study analytics.",h:285,media:""},
 {c:"game",t:"2D Action-RPG",y:2025,o:"Personal | Game",d:"Five playable characters, chasing enemy AI, real-time combat and three levels built in Unity.",h:60,media:""},
 {c:"game",t:"Guerre des Clans",y:2025,o:"Freelance | Strategy Game",d:"Turn-based strategy on a 10×10 grid with three unit types, XP, abilities and pathfinding enemy AI.",h:90,media:""},
+{c:"game",t:"2D OpenGL Scene Animation",y:2025,o:"Academic / Personal | Graphics Engine",d:"Real-time 2D scene animation engine in C++ and raw OpenGL 3.3 with custom GLSL shaders, a multi-scene state machine and animated fire and smoke effects.",h:15,media:""},
 {c:"web xr",t:"TuniTrack",y:2025,o:"Freelance | UI/UX",d:"UI/UX prototype for a Tunisian heritage tourism platform with VR tours and game-like navigation.",h:330,media:""}
 ];
 const HK=[
-{t:"First Place — Hackathon Digicamp 2",y:2023,o:"FSEGT × Berlin School of Economics | AI + Blockchain",d:"Team project: an AI and blockchain community-currency app letting rural women exchange their production without direct sales.",h:45,media:"https://drive.google.com/file/d/1KRBb5HvNkdErNFYw87wXDHgkFs3vSPSA/view?usp=sharing"},
-{t:"Global Game Jam — 4th Place",y:2026,o:"Global Game Jam | Unity",d:"DarkMaya, a 3D action-cinematic game about Mayan masks and a time-travel storyline, built with a team of three.",h:10,media:""},
-{t:"Third Place — HACK4FUTURE",y:2023,o:"HACK4FUTURE | AI Education",d:"Team project: an AI-powered educational application ranked third at the hackathon.",h:170,media:"https://drive.google.com/file/d/1yYUQg7AKzubz2SOn5xB0JwTkAeIIPutM/view?usp=sharing"},
-{t:"astroPreneur Hackathon",y:2025,o:"astroPreneur | Legal RAG",d:"Built a local retrieval-augmented assistant for Tunisian legal questions in three languages.",h:20,media:"https://youtu.be/AdX-o5nRwtA?si=TAqka0dxVwocohGi"}
+{t:"First Place — Hackathon Digicamp 2",y:2023,o:"FSEGT × Berlin School of Economics | AI + Blockchain",d:"Team project: an AI and blockchain community-currency app letting rural women exchange their production without direct sales.",h:45,media:"https://drive.google.com/file/d/1KRBb5HvNkdErNFYw87wXDHgkFs3vSPSA/view?usp=sharing",imgs:["Screenshot 2026-10-02 220034.png"]},
+{t:"Global Game Jam — 4th Place",y:2026,o:"Global Game Jam | Unity",d:"DarkMaya, a 3D action-cinematic game about Mayan masks and a time-travel storyline, built with a team of three.",h:10,media:"",imgs:["1770742644915.jpg"]},
+{t:"Third Place — HACK4FUTURE",y:2023,o:"HACK4FUTURE | AI Education",d:"Team project: an AI-powered educational application ranked third at the hackathon.",h:170,media:"https://youtu.be/KtnASxNO3DY?si=-m1ZK4nCiL9b5dch",imgs:["WhatsApp Image 2026-10-02 at 16.29.13.jpeg","WhatsApp Image 2026-10-02 at 16.29.13 (2).jpeg"]},
+{t:"astroPreneur Hackathon",y:2025,o:"astroPreneur | Legal RAG",d:"Built a local retrieval-augmented assistant for Tunisian legal questions in three languages.",h:20,media:"https://youtu.be/AdX-o5nRwtA?si=TAqka0dxVwocohGi",imgs:["1766056550786.jpg"]}
 ];
 const AC=[
-{t:"Best Graduation Project Award",y:2024,o:"FSEGT | Award",d:"Awarded the Best Graduation Project (Prix du Meilleur PFE) for my final-year work.",h:200,media:"https://youtu.be/_fvoBJ6GseM?si=3P59XIYsxIRLIxr5"},
+{t:"Best Graduation Project Award",y:2024,o:"FSEGT | Award",d:"Awarded the Best Graduation Project (Prix du Meilleur PFE) for my final-year work.",h:200,media:"https://youtu.be/_fvoBJ6GseM?si=3P59XIYsxIRLIxr5",imgs:["Screenshot 2026-10-02 221853.png"]},
 {t:"GDG On Campus Recognition",y:2026,o:"GDG On Campus ISAMM | Certificate",d:"Certificate of recognition for my contribution and commitment as a club member in 2025–2026.",h:230,media:""},
 {t:"Machine Learning Certifications",y:2025,o:"DataCamp | Certifications",d:"Supervised and unsupervised learning, deep learning with PyTorch, and reinforcement learning with Gymnasium.",h:280,media:""},
 {t:"AWS Certifications",y:2025,o:"DataCamp | Cloud",d:"AWS cloud concepts, Boto3 automation in Python, and streaming data with Kinesis and Lambda.",h:30,media:""},
@@ -231,9 +323,60 @@ const AC=[
 ];
 const SK=["Unity","C#","Meta XR SDK","OpenXR","Three.js","WebGL","WebRTC","Gaussian Splatting","Blender","Meta Quest","PyTorch","LangChain","RAG","OpenCV","MediaPipe","Scikit-learn","Reinforcement Learning","Gymnasium","Computer Vision","Angular","React","Node.js","Flask","Docker","AWS","Kafka","Figma"];
 const $=s=>document.querySelector(s),yt=u=>(u.match(/(?:youtu\.be\/|v=|embed\/)([\w-]{11})/)||[])[1];
+
+const DT={
+"4D Gaussian Splatting":{tech:["Python","PyTorch","CUDA","Gaussian Splatting","OpenCV","Three.js","WebGL","JavaScript","Git"],pts:["Adapted a feed-forward AI model (LGM) to a rig of 4 depth cameras to generate human Gaussian reconstructions from limited views — the only approach carried through to completion among five methods tested.","Developed a web-based point-cloud player/editor (Three.js / WebGL) with automatic noise cleanup (RANSAC, outlier removal) and AI-assisted object selection (OpenCV.js clustering).","Compared several reconstruction pipelines (3DGS, 4C4D, Diffuman4D, GaussianSplatt360), documenting the technical limits of each against the rig's hardware constraints."]},
+"VR Traffic Police Training":{tech:["Unity 3D","C#","Python","SUMO","Stable-Baselines3 (PPO)","FastAPI","ZeroMQ","OpenStreetMap","Meta Quest 3"],pts:["Immersive VR serious game for training traffic police officers in realistic urban traffic scenarios (Bardo district, Tunis), commissioned by the Ministère de l'Intérieur, the United Nations and ONSR.","Modelled a real roundabout from OpenStreetMap and coupled the SUMO traffic simulator with Unity 3D / VR in real time via ZeroMQ.","Reinforcement Learning agent (PPO) optimising traffic-light control, used as an objective reference to evaluate officer decisions.","PoliceDecisionTracker module comparing officer actions to RL recommendations live, with a weighted score and CSV/JSON session reports.","FastAPI backend and WebSocket dashboard for live instructor monitoring.","Deployed on Meta Quest 3 with smooth 72 fps rendering alongside real-time simulation data."]},
+"Aquaverse":{tech:["Unity 6 (URP)","C#","Blender","Meta XR SDK","OpenXR","XR Interaction Toolkit","Meta Quest"],pts:["Immersive ecological-awareness VR experience in Unity 6 / Meta Quest contrasting destructive cleaning methods with good practices.","In-VR collection mechanics (contact detection, highlighting, dynamic targeting) and real-time comparative video pop-ups.","Fauna, flora (Posidonia) and equipment modelled in Blender and optimised for Unity URP to keep VR performance smooth."]},
+"Urban VR Simulator":{tech:["Unity 3D","C#","Meta Quest 3"],pts:["Complete virtual city (buildings, police station, bus stops, university campus) with Tunisian buses modelled from real photos and dynamic traffic.","VR bus application for ticket purchase and real-time schedule lookup, delivered on Meta Quest 3."]},
+"Hajj Simulation":{tech:["Three.js","WebGL","JavaScript","WebRTC","PeerJS","HTML/CSS"],pts:["Immersive 3D browser simulation of the Hajj pilgrimage with realistic lighting, crowds and architectural detail.","First-person walk mode with free roam, crosshair HUD, speed control and compass.","Guided step-by-step pilgrimage with 10+ rituals, contextual cards, progress tracking and animated transitions.","Real-time multiplayer via WebRTC (PeerJS) with live avatar sync and floating name tags, plus full avatar customization.","Responsive Arabic-styled UI with mini-map, location badge and VR mode."]},
+"3D Avatar Motion Transfer":{tech:["Three.js","WebGL","MediaPipe","JavaScript","Inverse Kinematics","HTML/CSS"],pts:["Real-time full-body motion capture transferring live webcam pose onto a rigged 3D avatar (MediaPipe Pose + Three.js skeletal animation).","Custom inverse-kinematics pipeline mapping 33 body landmarks to bone rotations with quaternion math.","Procedural avatar creator and a bone calibration system with per-joint scale, offset and sign controls.","IDE-style split-panel UI with bone activity bars, confidence meter, FPS counter and mirror mode; single-file, zero-dependency browser app."]},
+"Lion Editor":{tech:["Python","Flask","Angular","Node.js","LXD","Keycloak","AI APIs"],pts:["End-to-end online Python IDE: write, save and run code inside secure LXD containers with full isolation between sessions.","AI assistance to generate, correct and explain code from text or voice commands.","Web scraping of GitHub and Anaconda repositories to suggest up-to-date Python packages in the editor.","Microservices backend (voice transcription, package classification, error analysis) and Keycloak authentication with role management.","Instant execution feedback, step-by-step error explanations and downloadable progress reports."]},
+"Employee Monitoring":{tech:["Python","Flask","OpenCV","SocketIO","Multiprocessing","SQLite","Oracle DB","HTML/CSS/JS"],pts:["AI-powered system monitoring employee productivity, health and attention in real time (Oct – Dec 2025).","Facial recognition and liveness detection for secure access control.","Attention and posture tracking with OpenCV and concurrent Multiprocessing; SocketIO alerts for fatigue, distraction or unauthorized access.","Privacy and GDPR compliance: optional anonymization, consent management and encrypted storage."]},
+"Tunisia Legal Q&A":{tech:["Python","Flask","Transformers","Sentence-BERT","FAISS","CUDA / PyTorch"],pts:["RAG system answering Tunisian legal questions using only local models — no external API keys (Dec 2024 – Jan 2025).","PDF pipeline to extract, chunk, embed and cache document vectors for fast retrieval.","Optional LLM generation (Phi-2) with EN/FR/AR prompts and graceful degradation; PDFs never leave the machine."]},
+"AI Video Processing":{tech:["Python","OpenCV","NumPy","FFmpeg","Haar Cascades","HSV Segmentation","JavaScript/HTML/CSS"],pts:["Modular video system: grayscale, edge detection, blur, sharpening, face detection, motion analysis and object detection (Nov – Dec 2025).","Parallel pipeline splitting videos into chunks, processing frame by frame and reassembling.","Real-time analytics: face counts, motion intensity, object tracking and edge density."]},
+"Tunisair Dashboard":{tech:["Python","Flask","Angular","Oracle Database","JWT","Scikit-learn","Pandas","Docker"],pts:["Full-stack decision-support application built during the Tunisair summer internship (Jul – Sep 2024).","Secure Flask + Angular architecture on an Oracle database; ML module for revenue prediction, customer segmentation and route profitability.","Deployed with Waitress for scalability and OWASP security compliance."]},
+"Study Notebook App":{tech:["React","Express.js","Node.js","Lunr.js","IndexedDB","AI APIs"],pts:["AI-enhanced study notebook for organizing and analysing notes (Sep – Oct 2025).","Optional AI summarization, quiz generation and topic extraction.","Analytics dashboards for study sessions, note activity, tag usage and time per subject."]},
+"2D Action-RPG":{tech:["Unity","C#","Blender","Game AI","UI/UX"],pts:["2D action-RPG with five playable characters and level progression (Oct 2024 – Jan 2025).","Enemy AI with dynamic chase behaviour and real-time combat.","Three complex levels with unique mechanics and interactive environments."]},
+"Guerre des Clans":{tech:["JavaScript","HTML5","CSS3","AI Pathfinding"],pts:["Turn-based strategy game with a 10×10 grid battlefield and three unit types (Mar – May 2025).","Enemy AI with pathfinding, decision-making and player pursuit.","XP progression system and ability unlocking."]},
+"TuniTrack":{tech:["Figma","Adobe XD","UX Research","Prototyping","VR Design"],pts:["Comprehensive UI/UX prototype for a Tunisian heritage tourism platform (Feb – May 2025).","Immersive VR tours and game-like navigation with cultural storytelling.","Optimised user journey across mobile and desktop."]},
+"2D OpenGL Scene Animation":{tech:["C++","OpenGL","GLFW","GLAD","GLSL","stb_image"],pts:["Real-time 2D scene animation engine written from scratch in C++ with raw OpenGL 3.3 Core Profile.","Custom GLSL vertex and fragment shaders: per-object tinting, alpha blending and smooth animation effects.","Multi-scene state machine with three animated scenes and fade transitions.","Visual effects: animated fire with sinusoidal flickering, oscillating smoke and rhythmic alert flashes."]}
+};
+const EX=[
+{t:"Trainer & Developer",o:"DecliTech",d:"February 2026 — Present",now:1,tech:["Node.js","Express","Python","Angular","Docker","AWS Cloud"],pts:["Training computer science students in artificial intelligence, N8N, programming and AR/VR.","Designing and developing the internal educational application used to deliver the training courses."]},
+{t:"4D Volumetric Reconstruction via Gaussian Splatting",o:"SARAAB XR STUDIO — Internship",d:"July — August 2026",tech:["Python","PyTorch","CUDA","Gaussian Splatting","OpenCV","Three.js","WebGL"],pts:["Adapted a feed-forward AI model (LGM) to a 4-depth-camera rig for human Gaussian reconstructions from limited views.","Built a Three.js / WebGL point-cloud player/editor with RANSAC noise cleanup and AI-assisted object selection."]},
+{t:"BI Developer",o:"Upgradetek Engineering",d:"January 2024 — May 2024",tech:["Node.js","Express","Python","Flask","Angular","Apache Kafka","Docker"],pts:["Led development of an end-to-end BI application for banking product management.","Implemented Docker containerization and secure Keycloak authentication.","Integrated Big Data tools (Kafka) to enhance financial forecasting and analytics."]},
+{t:"Aquaverse — Marine Depollution VR Simulation",o:"ATUTAX — Internship",d:"June — July 2026",tech:["Unity 6 (URP)","C#","Blender","Meta XR SDK","OpenXR","Meta Quest"],pts:["Designed an immersive ecological-awareness VR experience contrasting destructive cleaning methods with good practices.","Implemented in-VR collection mechanics and comparative video pop-ups; optimised Blender assets for URP."]},
+{t:"Lead Developer — Serious Game VR",o:"Ministère de l'Intérieur · United Nations · ONSR",d:"2025 — 2026",tech:["Unity 3D","SUMO","Stable-Baselines3 (PPO)","FastAPI","ZeroMQ","Meta Quest 3"],pts:["VR serious game training traffic police officers in the Bardo district, Tunis, coupling SUMO with Unity in real time.","PPO reinforcement-learning agent used as an objective reference to score officer decisions live."]},
+{t:"Full-Stack Developer Intern",o:"Tunisair — Summer Internship",d:"July 2024 — September 2024",tech:["Python","Flask","Angular","Oracle Database","JWT","Scikit-learn","Docker"],pts:["Developed the Tunisair Dashboard for data-driven decision-making and operational optimization.","Flask + Angular + Oracle architecture with an ML module for revenue prediction, customer segmentation and route profitability.","Deployed with Waitress, ensuring scalability and OWASP security compliance."]},
+{t:"Web Development Intern",o:"Tunisair — Internship",d:"June 2023 — August 2023",tech:["Flask","JavaScript","HTML","CSS","Bootstrap"],pts:["Built a web application automating Excel bank-statement transformation to the AFB120 format.","Reduced manual processing errors by 85% through automated data validation."]},
+{t:"Full-Stack Web Developer",o:"CrocoCoder — Match Tracking App (Training Project)",d:"March 2023 — May 2023",tech:["Angular","Node.js","Express.js","TypeScript","Bootstrap"],pts:["Built a real-time match-tracking application for public-facing sports platforms.","Mobile-first responsive design improving user engagement by 30%."]},
+{t:"BI Dashboard Developer",o:"Adventure Work — Freelance",d:"February 2023 — April 2023",tech:["Microsoft SQL Server","SSIS","SSAS","Power BI"],pts:["Developed strategic HR dashboards to improve resource management and decision-making.","Created KPI visualizations in Power BI for executive reporting.","Streamlined HR analytics, reducing report generation time by 60%."]}
+];
+const TR=[
+  ["Feb 2026","Reinforcement Learning with Gymnasium in Python","DataCamp"],
+  ["Feb 2026","Machine Learning Fundamentals in Python","DataCamp"],
+  ["Jan 2026","Introduction to Deep Learning with PyTorch","DataCamp"],
+  ["Jan 2026","Unsupervised Learning in Python","DataCamp"],
+  ["Jan 2026","Streaming Data with AWS Kinesis and Lambda","DataCamp"],
+  ["Jan 2026","AWS Cloud Technology and Services Concepts","DataCamp"],
+  ["Dec 2025","Introduction to AWS Boto in Python","DataCamp"],
+  ["Dec 2025","CCNA: Switching, Routing, and Wireless Essentials","Cisco Networking Academy — ISAMM"],
+  ["Nov 2025","Supervised Learning with scikit-learn","DataCamp"],
+  ["2024","CCNA 1 Training","Cisco"],
+  ["2023","MEAN Stack Training (Node.js, Angular, Express.js)","CrocoCoder"],
+  ["2023","Digital Community Currencies Training","Berlin School of Economics and Law"],
+  ["2022–2023","Digital Marketing Training","Université Centrale"],
+  ["2021–2022","Python, Big Data, and Data Science Training","Self-directed Learning"]
+];const tg=a=>`<div class="tags">${a.map(x=>`<span>${x}</span>`).join('')}</div>`,ul=a=>`<ul>${a.map(x=>`<li>${x}</li>`).join('')}</ul>`;
+function more(box,btn,arr,fn,n,label){let all=false;const d=()=>{$(box).innerHTML=arr.slice(0,all?arr.length:n).map(fn).join('');$(btn).textContent=all?'Show Less '+label:'Show More '+label};d();$(btn).onclick=()=>{all=!all;d();if(!all)$(box).scrollIntoView({block:'start',behavior:'smooth'})}}
+more('#ex','#exb',EX,e=>`<article class="ex${e.now?' now':''}"><h3>${e.t}</h3><div class="co">${e.o}</div><span class="dt${e.now?' nw':''}">${e.d}</span>${tg(e.tech)}${ul(e.pts)}</article>`,3,'Experience');
+more('#trn','#trb',TR,t=>`<div class="tr"><b>${t[0]}</b><p>${t[1]}</p><small>${t[2]}</small></div>`,3,'Training');
+
+
 const reg=[],TG={xr:"XR",ai:"AI",web:"WEB",game:"GAME"};
-function cards(el,arr,n,cls=''){el.innerHTML=arr.slice(0,n).map((p,i)=>{const k=reg.push(p)-1,id=p.media&&yt(p.media),im=p.media&&!id;
- return `<button class="cd ${cls}" data-k="${k}"><div class="im" style="--h:${p.h}">${p.c?`<div class="tgs">${p.c.split(' ').map(c=>`<span class="tg ${c}">${TG[c]}</span>`).join('')}</div>`:''}${im?`<img src="${p.media}" alt="" loading="lazy">`:''}${id?`<img src="https://i.ytimg.com/vi/${id}/hqdefault.jpg" alt="" loading="lazy"><span class="pp"></span>`:''}${p.media?'':`<em>${p.t.replace(/[^A-Za-z ]/g,'').split(' ').slice(0,2).map(w=>w[0]).join('')}</em>`}</div><div class="tx"><div class="tt"><h3>${p.t}</h3><span class="yr">${p.y}</span></div><div class="mt">${p.o}</div><p>${p.d}</p><span class="dc">Discover ↗</span></div></button>`}).join('')}
+function cards(el,arr,n,cls=''){el.innerHTML=arr.slice(0,n).map((p,i)=>{const k=reg.push(p)-1,id=p.media&&yt(p.media),cov=(p.imgs&&p.imgs[0])||(p.media&&!id&&!/drive\.google/.test(p.media)?p.media:''),im=!!cov,vid=!!id,nI=(p.imgs||[]).length;
+ return `<button class="cd ${cls}" data-k="${k}"><div class="im" style="--h:${p.h}">${p.c?`<div class="tgs">${p.c.split(' ').map(c=>`<span class="tg ${c}">${TG[c]}</span>`).join('')}</div>`:''}${im?`<img src="${cov}" alt="" loading="lazy" onerror="this.remove()">`:(id?`<img src="https://i.ytimg.com/vi/${id}/hqdefault.jpg" alt="" loading="lazy">`:'')}${vid?`<span class="pp"></span>`:''}${nI?`<span class="bg">🖼 ${nI}${vid?' + ▶':''}</span>`:''}${(p.media||nI)?'':`<em>${p.t.replace(/[^A-Za-z ]/g,'').split(' ').slice(0,2).map(w=>w[0]).join('')}</em>`}</div><div class="tx"><div class="tt"><h3>${p.t}</h3><span class="yr">${p.y}</span></div><div class="mt">${p.o}</div><p>${p.d}</p><span class="dc">Discover ↗</span></div></button>`}).join('')}
 const sec=(id,arr,n,btn,cls)=>{let all=false;cards($(id),arr,n,cls);const b=btn&&$(btn);if(b)b.onclick=()=>{all=!all;cards($(id),arr,all?arr.length:n,cls);b.textContent=b.textContent.replace(all?'Show More':'Show Less',all?'Show Less':'Show More')}};
 sec('#ach',AC,3,'#am');sec('#hk',HK,4,null,'ht');
 let flt='all',pall=false;const pb=$('#pm');
@@ -243,10 +386,23 @@ $('#fl').onclick=e=>{const b=e.target.closest('button');if(!b)return;flt=b.datas
 drawPJ();
 const pill=a=>a.map(x=>`<span class="pl">${x}</span>`).join('');
 $('#r1').innerHTML=pill(SK.slice(0,10)).repeat(4);$('#r2').innerHTML=pill(SK.slice(10)).repeat(4);
-const m=$('#m'),mc=$('#mc'),cl=()=>{m.classList.remove('on');mc.innerHTML=''};
-document.body.addEventListener('click',e=>{const c=e.target.closest('[data-k]');if(!c)return;const p=reg[c.dataset.k],id=p.media&&yt(p.media);
- mc.innerHTML=`<h3>${p.t}</h3><div class="mt">${p.o} | ${p.y}</div>${id?`<iframe src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen title="${p.t}"></iframe>`:(p.media?`<img src="${p.media}" alt="${p.t}">`:'')}<p>${p.d}</p>`;m.classList.add('on')});
-m.onclick=e=>{if(e.target==m||e.target.classList.contains('x'))cl()};addEventListener('keydown',e=>e.key=='Escape'&&cl());
+const m=$('#m'),mc=$('#mc'),cl=()=>{m.classList.remove('on');mc.innerHTML='';GL=null};
+let GL=null;
+function slide(){const g=GL,i=g.i,sl=g.s[i];$('#gs').innerHTML=sl.v?`<iframe src="https://www.youtube-nocookie.com/embed/${sl.v}?rel=0${g.auto?'&autoplay=1':''}" allow="autoplay; encrypted-media; fullscreen" allowfullscreen title="video"></iframe>`:`<img src="${sl.u}" alt="">`;g.auto=false;
+ const c=$('#gc');if(c)c.textContent=(i+1)+' / '+g.s.length;document.querySelectorAll('#gt button').forEach((b,j)=>b.classList.toggle('on',j==i))}
+function go(d){if(!GL)return;GL.i=(GL.i+d+GL.s.length)%GL.s.length;slide()}
+document.body.addEventListener('click',e=>{
+ const t=e.target.closest('[data-g]');if(t){GL.i=+t.dataset.g;slide();return}
+ if(e.target.closest('.pv')){go(-1);return}if(e.target.closest('.nx')){go(1);return}
+ const c=e.target.closest('[data-k]');if(!c)return;const p=reg[c.dataset.k],id=p.media&&yt(p.media);
+ const sl=[];if(id)sl.push({v:id,th:`https://i.ytimg.com/vi/${id}/default.jpg`});
+ if(p.media&&!id&&!/drive\.google/.test(p.media))sl.push({u:p.media,th:p.media});
+ (p.imgs||[]).forEach(u=>sl.push({u,th:u}));
+ GL=sl.length?{s:sl,i:0,auto:!!id}:null;
+ const drive=p.media&&/drive\.google/.test(p.media)?`<p style="margin-top:14px"><a class="bt" style="margin:0;padding:10px 24px;font-size:16px" href="${p.media}" target="_blank" rel="noopener">Open file ↗</a></p>`:'';
+ mc.innerHTML=`<h3>${p.t}</h3><div class="mt">${p.o} | ${p.y}</div>${GL?`<div class="gl"><div class="sl" id="gs"></div>${sl.length>1?`<span class="cn" id="gc"></span><button class="ar pv" aria-label="Previous">‹</button><button class="ar nx" aria-label="Next">›</button><div class="th" id="gt">${sl.map((x,j)=>`<button data-g="${j}" class="${x.v?'vd':''}" style="background-image:url('${x.th}')" aria-label="Media ${j+1}"></button>`).join('')}</div>`:''}</div>`:''}<p>${p.d}</p>${(DT[p.t]||{}).tech?tg(DT[p.t].tech):''}${(DT[p.t]||{}).pts?ul(DT[p.t].pts):''}${drive}`;
+ m.classList.add('on');if(GL)slide()});
+m.onclick=e=>{if(e.target==m||e.target.classList.contains('x'))cl()};addEventListener('keydown',e=>{if(e.key=='Escape')cl();if(GL&&e.key=='ArrowLeft')go(-1);if(GL&&e.key=='ArrowRight')go(1)});
 /* nav + scroll bar */
 const nv=$('#nv'),sb=$('#sb');
 function sc(){nv.classList.toggle('s',scrollY>40);const h=document.documentElement.scrollHeight-innerHeight,r=innerHeight/document.documentElement.scrollHeight;sb.style.height=Math.max(r*100,6)+'vh';sb.style.top=(h?scrollY/h*(1-r)*100:0)+'vh'}
