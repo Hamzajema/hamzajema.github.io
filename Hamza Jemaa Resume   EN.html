@@ -1,0 +1,419 @@
+<title>CV Hamza Jemaa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+  :root{
+    --bg:#EFEEE9;
+    --paper:#FFFFFF;
+    --ink:#1B1F23;
+    --ink-soft:#4B5560;
+    --ink-faint:#7C8790;
+    --accent:#2F5D62;
+    --accent-soft:#DCE8E7;
+    --rule:#E1DED5;
+    --rule-strong:#C9C4B7;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#101414; --paper:#181D1E; --ink:#ECEDE8; --ink-soft:#AEB6B0; --ink-faint:#7E8884;
+      --accent:#7FC4B6; --accent-soft:#22302F; --rule:#2A3232; --rule-strong:#3A4342;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#101414; --paper:#181D1E; --ink:#ECEDE8; --ink-soft:#AEB6B0; --ink-faint:#7E8884;
+    --accent:#7FC4B6; --accent-soft:#22302F; --rule:#2A3232; --rule-strong:#3A4342;
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', Arial, sans-serif;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:24px;
+    padding:32px 16px 64px;
+  }
+
+  .page{
+    width:8.5in;
+    background:var(--paper);
+    box-shadow:0 1px 3px rgba(0,0,0,.12), 0 12px 32px rgba(0,0,0,.14);
+    padding:0.6in 0.66in;
+    color:var(--ink);
+  }
+
+  h1,h2,h3,p,ul{margin:0;}
+  .mono{font-family:'IBM Plex Mono', 'Courier New', monospace;}
+
+
+  .head{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom:14px; border-bottom:1.5px solid var(--ink);
+  }
+  .name{display: flex;
+    justify-content: center;
+    align-items: center;font-size:26px; font-weight:700; letter-spacing:0.02em; text-wrap:balance; text-transform:uppercase;}
+  .role{display: flex;
+   justify-content: center;
+    align-items: center; margin-top:4px; font-family:'IBM Plex Mono', monospace; font-size:11px; font-weight:500;
+    letter-spacing:0.06em; text-transform:uppercase; color:var(--accent);
+  }
+  .contact {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 10.5px;
+    color: var(--ink-soft);
+    line-height: 1.65;
+    white-space: nowrap;
+}
+
+.contact .k {
+  justify-content: center;
+    align-items: center;
+    color: var(--ink-faint);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: .04em;
+}
+
+  .cont-head{
+    display:flex; justify-content:space-between; align-items:baseline;
+    padding-bottom:8px; margin-bottom:16px; border-bottom:1px solid var(--rule-strong);
+    font-family:'IBM Plex Mono', monospace; font-size:9.5px; color:var(--ink-faint); letter-spacing:.04em;
+  }
+  .cont-head b{color:var(--ink); font-family:'IBM Plex Sans', sans-serif; font-weight:600; font-size:11px; letter-spacing:0; text-transform:uppercase;}
+
+  .section{margin-top:7px;}
+  .page > .section:first-of-type{margin-top:0;}
+  .section-label{
+    font-family:'IBM Plex Mono', monospace; font-size:10px; font-weight:600; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--accent); display:flex; align-items:center; gap:8px; margin-bottom:8px;
+    break-after:avoid; break-inside:avoid;
+  }
+  .section-label::after{content:""; flex:1; height:1px; background:var(--rule);}
+
+  .summary{font-size:11px; line-height:1.55; color:var(--ink-soft); max-width:100%;}
+
+  .skills{display:flex; flex-direction:column; gap:5px;}
+  .skill-row{display:flex; gap:8px; font-size:10.5px; line-height:1.5;}
+  .skill-key{flex:0 0 168px; font-family:'IBM Plex Mono', monospace; font-size:9.5px; font-weight:600; letter-spacing:.02em; color:var(--ink); padding-top:1px;}
+  .skill-val{color:var(--ink-soft);}
+
+  .entry{margin-bottom:6px; break-inside:avoid;}
+  .entry:last-child{margin-bottom:0;}
+  .entry-top{display:flex; justify-content:space-between; align-items:baseline; gap:12px;}
+  .entry-title{font-size:12.5px; font-weight:700;}
+  .entry-org{font-weight:500; color:var(--accent);}
+  .entry-date{font-family:'IBM Plex Mono', monospace; font-size:9.5px; color:var(--ink-faint); white-space:nowrap;}
+  .entry ul{margin-top:4px; padding-left:14px; display:flex; flex-direction:column; gap:2px;}
+  .entry li{font-size:10.5px; line-height:1.38; color:var(--ink-soft);}
+  .entry li::marker{color:var(--ink-faint);}
+  .stack{margin-top:4px; font-family:'IBM Plex Mono', monospace; font-size:9px; letter-spacing:.02em; color:var(--ink-faint);}
+  .stack b{color:var(--ink-soft); font-weight:600;}
+
+  .assoc-list{display:grid; grid-template-columns:1fr 1fr; column-gap:24px; row-gap:5px; break-inside:avoid;}
+  .assoc-row{display:flex; flex-direction:column; gap:1px; font-size:10.5px; line-height:1.35;}
+  .assoc-top{display:flex; justify-content:space-between; align-items:baseline; gap:8px;}
+  .assoc-org{font-weight:600; color:var(--ink);}
+  .assoc-date{font-family:'IBM Plex Mono', monospace; font-size:9px; color:var(--ink-faint); white-space:nowrap;}
+  .assoc-role{color:var(--ink-soft);}
+
+  .interests{font-size:10.5px; color:var(--ink-soft); line-height:1.5;}
+
+  .edu-grid{display:grid; grid-template-columns:1fr 1fr; column-gap:24px;}
+  .edu-row{display:flex; justify-content:space-between; align-items:baseline; gap:12px; font-size:10.5px; padding:4px 0; border-bottom:1px solid var(--rule);}
+  .edu-row:last-child{border-bottom:none;}
+  .edu-deg{font-weight:600;}
+  .edu-school{color:var(--ink-soft);}
+  .edu-date{font-family:'IBM Plex Mono', monospace; font-size:9.5px; color:var(--ink-faint); white-space:nowrap;}
+
+  .langs{display:flex; gap:22px; font-size:10.5px; color:var(--ink-soft);}
+  .langs b{color:var(--ink); font-weight:600;}
+
+  .award{margin-top:6px; font-family:'IBM Plex Mono', monospace; font-size:10px; font-weight:600; letter-spacing:.04em; color:var(--accent); display:flex; align-items:center; gap:6px;}
+
+  .cert-list{display:flex; flex-direction:column; gap:4px;}
+  .cert-row{display:flex; gap:8px; font-size:10.5px; line-height:1.5;}
+  .cert-key{flex:0 0 168px; font-family:'IBM Plex Mono', monospace; font-size:9.5px; font-weight:600; letter-spacing:.02em; color:var(--ink); padding-top:1px;}
+  .cert-val{color:var(--ink-soft);}
+
+  .two-col{display:grid; grid-template-columns:1fr 1fr; column-gap:28px; break-inside:avoid;}
+
+  @media print{
+    body{padding:0; background:var(--paper); gap:0;}
+    .page{box-shadow:none; width:auto; min-height:auto; padding:0.22in 0.45in;}
+       .section-label::after {
+        background: var(--rule) !important;
+        height: 1px !important;
+        display: block !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+  }
+  @page{size:Letter; margin:0;}
+</style>
+
+<div class="page">
+
+  <div class="head">
+    <div>
+      <div class="name">Hamza Jemaa</div>
+      <div class="role">Engineering Student — VR | AI | LLM | RAG</div>
+      <div class="award"><i class="fa-solid fa-award"></i> Best Final-Year Project Award — 2024</div>
+    </div>
+    <div class="contact">
+  <div><i class="fa-solid fa-phone"></i> +216 51 075 734</div>
+<div><i class="fa-solid fa-envelope"></i> jemahamza81@gmail.com</div>
+<div><i class="fa-brands fa-linkedin"></i> linkedin.com/in/jemaa-hamza</div>
+<div><i class="fa-solid fa-globe"></i> hamzajema.github.io</div>
+
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Profile</div>
+    <p class="summary">Engineering student in Computer Science and Multimedia, ranked among the top of his class, with a solid foundation in web development, Business Intelligence (BI), DevOps, and UX/UI design, as well as hands-on experience in VR simulation and reinforcement learning. Has contributed to numerous projects, taking ownership of secure, scalable, and user-centered solutions. Actively collaborates with multidisciplinary teams to deliver innovative digital products.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Education</div>
+    <div class="edu-grid">
+      <div class="edu-row">
+        <div><span class="edu-deg">Engineering Degree in Computer Science and Multimedia</span><br><span class="edu-school">ISAM, University of Manouba</span></div>
+        <div class="edu-date">EXPECTED 2027</div>
+      </div>
+      <div class="edu-row">
+        <div><span class="edu-deg">Bachelor's Degree in Management Information Systems (BI)</span><br><span class="edu-school">FSEGT, University of El Manar</span></div>
+        <div class="edu-date">2024</div>
+      </div>
+      <div class="edu-row">
+        <div><span class="edu-deg">Baccalaureate in Mathematics</span><br><span class="edu-school">Ibn Khaldoun High School</span></div>
+        <div class="edu-date">2021</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Skills</div>
+    <div class="skills">
+      <div class="skill-row"><div class="skill-key">Programming Languages</div><div class="skill-val">HTML5, CSS3, JavaScript, TypeScript, SQL, NoSQL, Java/JEE, C, C++, C#, VB.NET, PHP, Python</div></div>
+      <div class="skill-row"><div class="skill-key">Frameworks &amp; Web</div><div class="skill-val">Flask, FastAPI, Angular, Vue.js, Express.js, Node.js, Bootstrap</div></div>
+      <div class="skill-row"><div class="skill-key">BI &amp; Databases</div><div class="skill-val">Power BI, IBM SPSS, SSMS, SSIS, SSAS, Oracle, MongoDB, SQLite</div></div>
+      <div class="skill-row"><div class="skill-key">Big Data, Cloud &amp; Security</div><div class="skill-val">Apache Kafka, Keycloak, Docker, JWT, OWASP</div></div>
+      <div class="skill-row"><div class="skill-key">AI &amp; Machine Learning</div><div class="skill-val">Reinforcement Learning (PPO, Stable-Baselines3), LangChain, LangGraph, RAG, LLM, NLP,<br> Scikit-learn, Pandas, NumPy, Transformers, Sentence-BERT, FAISS, PyTorch, OpenCV</div></div>
+      <div class="skill-row"><div class="skill-key">Games, 3D &amp; VR</div><div class="skill-val">Unity 3D, C#, Blender, Meta Quest 3, Meta XR SDK, OpenXR, XR Interaction Toolkit, OpenGL, <br>GLFW/GLAD/GLSL, SUMO, ZeroMQ</div></div>
+      <div class="skill-row"><div class="skill-key">Design</div><div class="skill-val">Figma, Balsamiq</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Professional Experience</div>
+
+    <div class="entry">
+      <div class="entry-top">
+        <div class="entry-title">Trainer &amp; Developer — <span class="entry-org">DecliTech</span></div>
+        <div class="entry-date">FEB 2026 — PRESENT</div>
+      </div>
+      <ul>
+        <li>Training computer science students: artificial intelligence, N8N, programming, and AR virtual reality.</li>
+        <li>Design and development of the internal educational application used to deliver the training sessions.</li>
+      </ul>
+            <div class="stack"><b>Stack —</b> Node.js, Express, Python, Angular, Docker, AWS Cloud</div>
+
+    </div>
+
+    <div class="entry">
+      <div class="entry-top">
+        <div class="entry-title">BI Developer — <span class="entry-org">Upgradetek Engineering</span></div>
+        <div class="entry-date">JAN — DEC 2024</div>
+      </div>
+      <ul>
+        <li>Design and development of a complete BI application for banking product management.</li>
+        <li>Development and deployment of Machine Learning models for calculating and predicting the Key Interest Rate and the TMM (Tunisian money-market rate).</li>
+        <li>Task allocation within the team to optimize the delivery cycle.</li>
+        <li>Integration of Big Data tools (Apache Kafka) to improve financial forecasting and analysis.</li>
+      </ul>
+      <div class="stack"><b>Stack —</b> Node.js, Express, Python, Flask, Angular, Apache Kafka, Keycloak, Docker</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Internship Projects</div>
+
+    <div class="entry">
+      <div class="entry-top">
+        <div class="entry-title">4D Volumetric Reconstruction via Gaussian Splatting — <span class="entry-org">SARAAB XR STUDIO</span></div>
+        <div class="entry-date">JUL — AUG 2026</div>
+      </div>
+      <ul>
+        <li>Adapted a feed-forward AI model (LGM) to a 4-depth-camera rig to generate human Gaussian<br> reconstructions from limited views — the only approach carried through to completion among five methods tested.</li>
+        <li>Developed a web-based point-cloud viewer/editor (Three.js/WebGL) with automatic noise cleanup (RANSAC, <br>outlier removal) and AI-assisted object selection (OpenCV.js clustering).</li>
+        <li>Benchmarked and compared several reconstruction pipelines (3DGS, 4C4D, Diffuman4D, GaussianSplatt360),<br> documenting the technical limitations of each given the rig's hardware constraints.</li>
+      </ul>
+      <div class="stack"><b>Stack —</b> Python, PyTorch, CUDA, Gaussian Splatting, OpenCV, Three.js, WebGL, JavaScript, Git</div>
+    </div>
+<div class="entry">
+      <div class="entry-top">
+        <div class="entry-title">Aquaverse — VR Marine Depollution Simulation — <span class="entry-org">ATUTAX</span></div>
+        <div class="entry-date">JUN — JUL 2026</div>
+      </div>
+      <ul>
+     <li>VR Development &amp; Gameplay: Designed an immersive ecological-awareness experience (Unity 6 / Meta Quest)<br> contrasting destructive cleanup methods with best practices.</li>
+    <li>In-VR Interactions &amp; Education: Implemented collection mechanics (contact detection, highlighting, dynamic<br> targeting) and integrated real-time comparative video pop-ups.</li>
+    <li>3D Modeling &amp; Integration: Created wildlife, flora (Posidonia seagrass), and equipment assets in Blender, <br>optimized in Unity (URP) to ensure smooth VR performance.</li>
+    </ul>
+      <div class="stack"><b>Stack —</b> Unity 6 (URP), C#, Blender, Meta XR SDK, OpenXR, XR Interaction Toolkit</div>
+    </div>
+    <div class="entry">
+      <div class="entry-top">
+        <div class="entry-title">Full-Stack &amp; Machine Learning Dashboard — <span class="entry-org">Tunisair</span></div>
+        <div class="entry-date">JUL — SEP 2024</div>
+      </div>
+      <ul>
+        <li>Developed the Tunisair Dashboard, a full-stack web application for decision support and operational optimization.</li>
+        <li>Integrated a secure Flask backend (JWT) with an Angular frontend and an Oracle database.</li>
+        <li>Built ML modules (Scikit-learn, Pandas) for revenue forecasting, customer segmentation, and route profitability analysis.</li>
+      </ul>
+      <div class="stack"><b>Stack —</b> Python, Flask, Angular, Oracle, JWT, Scikit-learn, Pandas, Docker</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Academic Projects</div>
+
+    <div class="entry">
+      <div class="entry-top">
+        <div class="entry-title">Serious Game VR — <span class="entry-org">ISAMM &amp; United Nations &amp; ONSR</span></div>
+        <div class="entry-date">2025 — 2026</div>
+      </div>
+      <ul>
+        <li>Designed a VR serious game to train police officers in traffic management (Bardo, Tunis), featuring a<br> real-time SUMO/Unity simulation via ZeroMQ, an RL agent (PPO), and a FastAPI/WebSocket metrics-tracking dashboard.</li>
+      </ul>
+      <div class="stack"><b>Stack —</b> Unity 3D, Python, SUMO, Meta Quest 3, Stable-Baselines3 (PPO), FastAPI, ZeroMQ, C#, OpenStreetMap</div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-top">
+        <div class="entry-title">Employee Monitoring &amp; Well-being System</div>
+        <div class="entry-date">OCT — DEC 2025</div>
+      </div>
+      <ul>
+<li>Designed a real-time Computer Vision pipeline for facial recognition, facial landmark tracking, and<br> liveness detection (anti-spoofing).</li>
+<li>Implemented head-pose estimation and Eye Aspect Ratio (EAR) algorithms for GDPR-compliant<br> attention and fatigue analysis.</li>
+</ul>
+      <div class="stack"><b>Stack —</b> Python, Flask, OpenCV, SocketIO, SQLite, Oracle</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Personal Projects</div>
+
+    <div class="entry">
+      <div class="entry-top">
+        <div class="entry-title">Creator &amp; Lead Developer — <span class="entry-org">Urban VR Simulator</span></div>
+        <div class="entry-date">JAN — MAY 2026</div>
+      </div>
+      <ul>
+        <li>Designed and built a complete virtual city (buildings, Tunisian buses modeled from real photos,<br> campus) with a VR app for real-time ticket purchases and schedules, shipped on Meta Quest 3.</li>
+      </ul>
+      <div class="stack"><b>Stack —</b> Unity 3D, C#</div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-top">
+        <div class="entry-title">Creator &amp; Full-Stack Developer — <span class="entry-org">Lion Editor</span></div>
+        <div class="entry-date">SEP — JAN 2025</div>
+      </div>
+      <ul>
+        <li>Led the development of Lion Editor, an online Python IDE (secured LXD containers) with AI assistance <br>for code generation/correction and dedicated microservices (voice transcription, error analysis, package suggestions).</li>
+      </ul>
+      <div class="stack"><b>Stack —</b> Python, Flask, Angular, Node.js, LXD, Keycloak, AI APIs</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Hackathons</div>
+
+    <div class="entry">
+      <div class="entry-top">
+        <div class="entry-title">The astroPreneur Hackathon — <span class="entry-org">Tunisia Legal Q&amp;A System</span></div>
+        <div class="entry-date">OCT 2025</div>
+      </div>
+      <ul>
+        <li>As part of a team, designed a fully local RAG system answering Tunisian legal questions, with a PDF<br> processing pipeline and multilingual LLM generation (FR/EN/AR).</li>
+      </ul>
+      <div class="stack"><b>Stack —</b> Python, Flask, Transformers, Sentence-BERT, FAISS, PyTorch</div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-top">
+        <div class="entry-title">Hackathon Digicamp 2 — <span class="entry-org">1st Place</span></div>
+        <div class="entry-date">JUN 2023</div>
+      </div>
+      <ul>
+        <li>As part of a team (FSEGT × Berlin School of Economics and Law), designed an innovative AI + blockchain<br> application for community currencies, enabling rural women to exchange their produce without direct monetary sale.</li>
+      </ul>
+      <div class="stack"><b>Stack —</b> Artificial Intelligence, Blockchain</div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-top">
+        <div class="entry-title">HACK4FUTURE Hackathon — <span class="entry-org">3rd Place</span></div>
+        <div class="entry-date">OCT 2023</div>
+      </div>
+      <ul>
+        <li>As part of a team, designed an AI-powered educational application, ranked 3rd at the hackathon.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Certifications</div>
+    <div class="cert-list">
+      <div class="cert-row"><div class="cert-key">AI, Machine Learning &amp; Data Science</div><div class="cert-val">Reinforcement Learning, ML Fundamentals, Deep Learning (PyTorch), Unsupervised &amp; Supervised Learning — DataCamp, Nov 2025 – Feb 2026; Python, Big Data &amp; Data Science — self-directed learning, 2021-2022</div></div>
+      <div class="cert-row"><div class="cert-key">Cloud &amp; Data Engineering</div><div class="cert-val">AWS Cloud Concepts, AWS Boto, Streaming with Kinesis/Lambda — DataCamp, Dec 2025 – Jan 2026</div></div>
+      <div class="cert-row"><div class="cert-key">Networking</div><div class="cert-val">CCNA 1 — Cisco, 2024 · CCNA 2 — Cisco, 2025</div></div>
+      <div class="cert-row"><div class="cert-key">Web Dev</div><div class="cert-val">MEAN Stack — CrocoCoder, 2023 · Digital Community Currencies — Berlin School of Economics and Law, 2023</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Extracurricular &amp; Volunteer Experience</div>
+    <div class="assoc-list">
+      <div class="assoc-row"><div class="assoc-top"><div class="assoc-org">ISAMM Robotics Club</div><div class="assoc-date">SEP 2025 — PRESENT</div></div><div class="assoc-role">Vice-President</div></div>
+      <div class="assoc-row"><div class="assoc-top"><div class="assoc-org">Google Developer Student Club (GDSC)</div><div class="assoc-date">SEP 2025 — PRESENT</div></div><div class="assoc-role">Member — Marketing Team</div></div>
+      <div class="assoc-row"><div class="assoc-top"><div class="assoc-org">ATUTAX</div><div class="assoc-date">MAY 2025 — PRESENT</div></div><div class="assoc-role">Member</div></div>
+      <div class="assoc-row"><div class="assoc-top"><div class="assoc-org">Tunisian Red Crescent — Omrane Supérieur Committee</div><div class="assoc-date">DEC 2017 — DEC 2019</div></div><div class="assoc-role">Member</div></div>
+      <div class="assoc-row"><div class="assoc-top"><div class="assoc-org">FSEGT</div><div class="assoc-date">DEC 2021</div></div><div class="assoc-role">Guest Trainer — Emerging Trends and Research Directions in Computer Science</div></div>
+      <div class="assoc-row"><div class="assoc-top"><div class="assoc-org">4C — Career and Skills Certification Center</div><div class="assoc-date">APR 2022</div></div><div class="assoc-role">Guest Trainer — Python for Data Analysis</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Languages</div>
+    <div class="langs">
+      <div><b>Arabic</b> — Native</div>
+      <div><b>French</b> — Advanced</div>
+      <div><b>English</b> — Professional</div>
+      <div><b>German</b> — Beginner</div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="section-label">Interests</div>
+    <div class="langs">
+      <div><b>Camping</b></div>
+      <div><b>· Problem Solving</b></div>
+      <div><b>· Reading (various genres)</b></div>
+    </div>
+  </div>
+</div>
