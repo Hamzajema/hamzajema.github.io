@@ -1,833 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hamza Jemaa - Software Engineer & Developer</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --primary-color: #0f172a;
-            --secondary-color: #3b82f6;
-            --accent-color: #06b6d4;
-            --success-color: #10b981;
-            --warning-color: #f59e0b;
-            --danger-color: #ef4444;
-            --light-gray: #f8fafc;
-            --medium-gray: #64748b;
-            --dark-gray: #334155;
-            --white: #ffffff;
-            --gradient-primary: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            --gradient-accent: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
-            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: var(--dark-gray); background-color: var(--white); overflow-x: hidden; }
-        html { scroll-behavior: smooth; }
-        nav { position: fixed; top: 0; width: 100%; background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(59, 130, 246, 0.1); z-index: 1000; transition: all 0.3s ease; }
-        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; }
-        .logo { font-size: 1.5rem; font-weight: 700; color: var(--white); text-decoration: none; }
-        .nav-links { display: flex; gap: 2rem; list-style: none; }
-        .nav-links a { color: rgba(255, 255, 255, 0.8); text-decoration: none; font-weight: 500; transition: all 0.3s ease; position: relative; }
-        .nav-links a:hover { color: var(--accent-color); }
-        .nav-links a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0; background: var(--accent-color); transition: width 0.3s ease; }
-        .nav-links a:hover::after { width: 100%; }
-        .mobile-menu { display: none; color: var(--white); font-size: 1.5rem; cursor: pointer; }
-        .hero { min-height: 100vh; background: var(--gradient-primary); display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white); position: relative; overflow: hidden; }
-        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%25" cy="50%25"><stop offset="0%25" stop-color="%233b82f6" stop-opacity="0.1"/><stop offset="100%25" stop-color="%233b82f6" stop-opacity="0"/></radialGradient></defs><circle cx="50%25" cy="50%25" r="50%25" fill="url(%23a)"/></svg>') center/cover; opacity: 0.3; }
-        .hero-content { max-width: 800px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1; }
-        .profile-image { width: 160px; height: 160px; border-radius: 50%; border: 4px solid var(--accent-color); margin: 0 auto 2rem; box-shadow: var(--shadow-xl); background: var(--light-gray); display: flex; align-items: center; justify-content: center; font-size: 4rem; color: var(--primary-color); overflow: hidden; }
-        .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; margin-bottom: 1rem; background: linear-gradient(135deg, var(--white) 0%, var(--accent-color) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .hero-subtitle { font-size: 1.5rem; font-weight: 400; margin-bottom: 2rem; color: rgba(255, 255, 255, 0.9); }
-        .hero-description { font-size: 1.1rem; margin-bottom: 3rem; color: rgba(255, 255, 255, 0.8); max-width: 600px; margin-left: auto; margin-right: auto; }
-        .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-        .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.875rem 2rem; border-radius: 50px; font-weight: 600; text-decoration: none; transition: all 0.3s ease; border: none; cursor: pointer; font-size: 1rem; }
-        .btn-primary { background: var(--gradient-accent); color: var(--white); box-shadow: var(--shadow-lg); }
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-xl); }
-        .btn-outline { background: transparent; color: var(--white); border: 2px solid rgba(255, 255, 255, 0.3); }
-        .btn-outline:hover { background: rgba(255, 255, 255, 0.1); border-color: var(--accent-color); }
-        .contact-info { display: flex; justify-content: center; gap: 2rem; margin-top: 3rem; flex-wrap: wrap; }
-        .contact-item { display: flex; align-items: center; gap: 0.5rem; color: rgba(255, 255, 255, 0.8); transition: all 0.3s ease; }
-        .contact-item:hover { color: var(--accent-color); transform: translateY(-2px); }
-        .main-content { padding: 5rem 0; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-        .section { margin-bottom: 6rem; }
-        .section-header { text-align: center; margin-bottom: 4rem; }
-        .section-title { font-size: 2.5rem; font-weight: 700; color: var(--primary-color); margin-bottom: 1rem; }
-        .section-subtitle { font-size: 1.2rem; color: var(--medium-gray); max-width: 600px; margin: 0 auto; }
-        .card { background: var(--white); border-radius: 16px; padding: 2rem; box-shadow: var(--shadow-md); transition: all 0.3s ease; border: 1px solid rgba(59, 130, 246, 0.1); }
-        .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-xl); }
-        .card-featured { border: 1px solid rgba(6, 182, 212, 0.3); background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%); position: relative; overflow: hidden; }
-        .card-featured::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gradient-accent); }
-        .badge-featured { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.3rem 0.9rem; background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%); color: var(--accent-color); border-radius: 20px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 1rem; }
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .skill-category h3 { font-size: 1.25rem; font-weight: 600; color: var(--primary-color); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; }
-        .skill-tags { display: flex; flex-wrap: wrap; gap: 0.75rem; }
-        .skill-tag { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; background: var(--light-gray); border-radius: 25px; font-size: 0.9rem; font-weight: 500; color: var(--dark-gray); transition: all 0.3s ease; border: 1px solid transparent; }
-        .skill-tag:hover { background: var(--secondary-color); color: var(--white); transform: translateY(-2px); }
-        .experience-timeline { position: relative; }
-        .experience-timeline::before { content: ''; position: absolute; left: 2rem; top: 0; bottom: 0; width: 2px; background: var(--accent-color); }
-        .experience-item { position: relative; margin-bottom: 3rem; padding-left: 5rem; }
-        .experience-item::before { content: ''; position: absolute; left: 1.25rem; top: 0.5rem; width: 1.5rem; height: 1.5rem; background: var(--accent-color); border-radius: 50%; border: 4px solid var(--white); box-shadow: var(--shadow-md); }
-        .experience-item.featured::before { background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%); width: 1.75rem; height: 1.75rem; left: 1.125rem; box-shadow: 0 0 0 4px rgba(6, 182, 212, 0.2), var(--shadow-md); }
-        .experience-header { margin-bottom: 1rem; }
-        .experience-title { font-size: 1.5rem; font-weight: 600; color: var(--primary-color); margin-bottom: 0.5rem; }
-        .experience-company { font-size: 1.1rem; color: var(--secondary-color); font-weight: 500; margin-bottom: 0.5rem; }
-        .experience-date { color: var(--medium-gray); font-size: 0.9rem; background: var(--light-gray); padding: 0.25rem 0.75rem; border-radius: 12px; display: inline-block; margin-bottom: 1rem; }
-        .experience-tech { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
-        .tech-tag { font-size: 0.8rem; padding: 0.25rem 0.75rem; background: rgba(59, 130, 246, 0.1); color: var(--secondary-color); border-radius: 12px; border: 1px solid rgba(59, 130, 246, 0.2); }
-        .experience-description ul { list-style: none; padding: 0; }
-        .experience-description li { margin-bottom: 0.75rem; position: relative; padding-left: 1.5rem; line-height: 1.6; }
-        .experience-description li::before { content: '▸'; position: absolute; left: 0; color: var(--accent-color); font-weight: bold; }
-        .education-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
-        .education-item h3 { font-size: 1.25rem; font-weight: 600; color: var(--primary-color); margin-bottom: 0.5rem; }
-        .education-institution { color: var(--secondary-color); font-weight: 500; margin-bottom: 0.5rem; }
-        .education-status { display: inline-block; padding: 0.25rem 0.75rem; background: var(--success-color); color: var(--white); border-radius: 12px; font-size: 0.8rem; font-weight: 500; margin-left: 0.5rem; }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#05060a">
+<title>Hamza Jemaa — XR & AI Engineer</title>
+<meta name="description" content="Hamza Jemaa — Software Engineer building XR/VR experiences and AI systems: reinforcement learning, computer vision, RAG, Gaussian Splatting and full-stack apps.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<style>
+:root{--bg:#05060a;--bl:#2fa8ff;--bl2:#2f6bff;--ai:#a78bfa;--g:linear-gradient(90deg,#38b6ff,#7c6cff 60%,#b07bff);--cd:linear-gradient(145deg,#112238,#0b1424);--bd:#16304a;--mu:#9aa3b2}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:#fff;font:17px/1.6 Inter,system-ui,sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--bl);outline-offset:3px}
+#st{position:fixed;inset:0;z-index:0;pointer-events:none}
+#sb{position:fixed;right:0;top:0;width:5px;border-radius:3px;background:var(--g);z-index:60}
+.g{background:var(--g);-webkit-background-clip:text;background-clip:text;color:transparent}
+nav{position:fixed;z-index:50;top:0;left:0;right:0;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:14px 8%;transition:.35s}
+nav.s{top:14px;left:20px;right:20px;padding:10px 8%;border-radius:99px;background:rgba(13,29,46,.82);border:1px solid var(--bd);backdrop-filter:blur(14px)}
+nav div{display:flex;gap:34px;font-size:16px}
+nav div a{color:#e9eef7;transition:.2s}nav div a:hover{color:var(--bl)}
+nav svg{width:46px;height:26px}
+main{position:relative;z-index:1}
+.w{max-width:1250px;margin:auto;padding:0 28px}
+.hero{min-height:100vh;display:grid;place-items:center;text-align:center;padding:80px 24px}
+.hero small{color:var(--bl);font-size:21px;font-weight:500;text-transform:uppercase}
+h1{font-size:clamp(46px,8vw,90px);font-weight:800;line-height:1.05;letter-spacing:-.025em;margin:26px 0}
+.hero p{max-width:760px;margin:0 auto 46px;color:#d3d8e2;font-size:22px;font-weight:300}
+.bt{display:inline-block;padding:20px 50px;border-radius:99px;font-weight:600;font-size:20px;border:1px solid #2a3340;margin:0 6px 12px;transition:.25s}
+.bt.p{background:var(--g);border:0;padding:21px 51px}
+.bt:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(47,168,255,.3)}
+.ms{margin:40px auto 0;width:20px;height:34px;border:2px solid #aab;border-radius:12px;position:relative}
+.ms::after{content:"";position:absolute;left:7px;top:6px;width:2px;height:7px;background:#aab;border-radius:2px;animation:sc 1.6s infinite}
+@keyframes sc{50%{transform:translateY(8px);opacity:.2}}
+section{padding:90px 0 40px;scroll-margin-top:30px}
+h2{text-align:center;font-size:clamp(38px,5.5vw,64px);font-weight:800;letter-spacing:-.02em;line-height:1.1}
+.sub{text-align:center;color:var(--mu);font-size:22px;margin:14px 0 54px}
+hr{border:0;border-top:1px solid #1b1d22;max-width:1120px;margin:50px auto 0}
+.ab{max-width:1120px;margin:auto;border:1px solid var(--bd);border-radius:36px;background:var(--cd);padding:56px;display:grid;grid-template-columns:340px 1fr;gap:56px;align-items:center;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.ph{width:320px;height:320px;border-radius:50%;border:5px solid #1c5476;overflow:hidden;background:radial-gradient(circle at 30% 20%,#0c4a73,#050b14);display:grid;place-items:center}
+.ph img{width:100%;height:100%;object-fit:cover}.ph i{font:800 80px Inter;font-style:normal;color:var(--bl)}
+.ab h3{font-size:44px;font-weight:700;line-height:1.1}
+.ab .r{color:var(--bl);font-size:25px;font-weight:500;margin:6px 0 16px}
+.ab p{color:#bcc5d3;font-size:20px;font-weight:300}
+.ab q{display:block;color:var(--bl);font-style:italic;margin:20px 0 28px;quotes:none}
+.sts{display:flex;gap:44px;flex-wrap:wrap;margin-bottom:30px}
+.sts b{display:block;font-size:34px;color:var(--bl);font-weight:700;line-height:1.1}.sts span{font-size:15px;color:#cdd5e2}
+.row{overflow:hidden;margin:0 auto 22px;max-width:1250px;-webkit-mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.row div{display:flex;gap:16px;width:max-content;animation:mq 34s linear infinite}
+.row.rv div{animation-direction:reverse}
+@keyframes mq{to{transform:translateX(-50%)}}
+.pl{display:flex;align-items:center;gap:12px;padding:20px 30px;border-radius:99px;background:var(--cd);border:1px solid var(--bd);font-weight:600;font-size:21px;white-space:nowrap}
+.pl::before{content:"";width:17px;height:17px;border:2px dashed #cfe4f5;border-radius:4px}
+.cg{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;max-width:1250px;margin:auto}
+.cd{border-radius:28px;overflow:hidden;background:var(--cd);border:1px solid #101b2a;display:flex;flex-direction:column;transition:.3s;cursor:pointer;text-align:left;color:inherit;font:inherit;padding:0}
+.cd:hover{transform:translateY(-6px);border-color:var(--bd);box-shadow:0 18px 44px rgba(47,168,255,.12)}
+.im{height:240px;position:relative;display:grid;place-items:center;overflow:hidden;background:radial-gradient(circle at 20% 15%,hsl(var(--h) 85% 55%/.65),transparent 58%),radial-gradient(circle at 90% 100%,hsl(calc(var(--h) + 60) 85% 50%/.5),transparent 55%),#08101c}
+.im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.im em{font:800 58px Inter;font-style:normal;opacity:.3}
+.pp{position:absolute;width:60px;height:60px;border-radius:50%;background:rgba(5,10,18,.72);border:1px solid #fff8;display:grid;place-items:center}
+.pp::after{content:"";border-left:16px solid #fff;border-block:10px solid transparent;margin-left:4px}
+.tx{padding:22px 24px 24px;display:flex;flex-direction:column;gap:6px;flex:1}
+.tt{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.tt h3{color:var(--bl);font-size:22px;font-weight:500;line-height:1.3}
+.yr{background:#12304a;border-radius:99px;padding:3px 13px;font-size:14px;font-weight:600;flex:none}
+.mt{font-size:15px;color:var(--mu)}
+.tx p{font-size:17px;color:#e3e8f0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.dc{color:var(--bl);font-size:16px;margin-top:auto;padding-top:6px}
+.cd.ht h3::before{content:"🏅";margin-right:8px;font-size:20px}
+.sm{display:block;margin:44px auto 0;padding:15px 30px;border-radius:99px;background:#0a1220;border:1px solid var(--bd);color:#fff;font:600 17px Inter;cursor:pointer;box-shadow:0 0 22px rgba(47,168,255,.2);transition:.25s}
+.sm:hover{box-shadow:0 0 34px rgba(47,168,255,.45)}
+.ct{display:flex;gap:28px;justify-content:center;flex-wrap:wrap;max-width:880px;margin:0 auto 46px}
+.ci{flex:1;min-width:300px;display:flex;align-items:center;gap:16px;padding:22px 22px;border-radius:99px;background:var(--cd);border:1px solid var(--bd)}
+.ci i{width:46px;height:46px;border-radius:14px;background:#10314b;display:grid;place-items:center;color:var(--bl);font-style:normal;font-size:22px}
+.ci b{display:block;font-size:17px}.ci span{font-size:15px;color:#b4bdca}
+.so{max-width:880px;margin:auto;border:1px solid var(--bd);border-radius:36px;background:var(--cd);padding:32px;display:flex;gap:44px;justify-content:center;font-weight:700;font-size:20px}
+.so a{color:#9aa3b2;transition:.2s}.so a:hover{color:var(--bl)}
+footer{text-align:center;color:#6b7280;font-size:15px;padding:50px 0 80px}
+#m{position:fixed;inset:0;z-index:80;background:rgba(0,0,0,.72);backdrop-filter:blur(8px);display:none;place-items:center;padding:20px}
+#m.on{display:grid}
+.mb{position:relative;width:min(780px,100%);max-height:94vh;overflow:auto;border:1px solid var(--bd);border-radius:30px;background:linear-gradient(145deg,#1a2536,#0c1220);padding:34px}
+.mb h3{font-size:34px;font-weight:700;line-height:1.15;padding-right:44px}
+.mb .mt{color:var(--bl);font-size:18px;margin:6px 0 20px}
+.mb iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:20px;margin-bottom:20px}
+.mb img{width:100%;border-radius:20px;margin-bottom:20px}
+.mb p{color:#d8dee9;font-size:18px}
+.x{position:absolute;top:22px;right:22px;width:40px;height:40px;border-radius:50%;border:2px solid var(--bl);background:#0b1626;color:var(--bl);font-size:22px;cursor:pointer}
 
-        /* Certifications Grid */
-        .certifications-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
-        .cert-card { background: var(--white); border-radius: 14px; padding: 1.5rem; box-shadow: var(--shadow-md); border: 1px solid rgba(59, 130, 246, 0.1); transition: all 0.3s ease; display: flex; gap: 1rem; align-items: flex-start; }
-        .cert-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-xl); border-color: rgba(6, 182, 212, 0.3); }
-        .cert-icon { width: 48px; height: 48px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; }
-        .cert-icon.cisco { background: linear-gradient(135deg, #1ba0d7 0%, #00bceb 100%); color: white; }
-        .cert-icon.aws { background: linear-gradient(135deg, #ff9900 0%, #ffb84d 100%); color: white; }
-        .cert-icon.ml { background: linear-gradient(135deg, #10b981 0%, #34d399 100%); color: white; }
-        .cert-icon.dl { background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%); color: white; }
-        .cert-icon.rl { background: linear-gradient(135deg, #ef4444 0%, #f87171 100%); color: white; }
-        .cert-body { flex: 1; }
-        .cert-title { font-size: 1rem; font-weight: 600; color: var(--primary-color); margin-bottom: 0.25rem; line-height: 1.4; }
-        .cert-issuer { font-size: 0.85rem; color: var(--secondary-color); font-weight: 500; margin-bottom: 0.4rem; }
-        .cert-meta { display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center; }
-        .cert-date { font-size: 0.78rem; color: var(--medium-gray); background: var(--light-gray); padding: 0.2rem 0.6rem; border-radius: 8px; }
-        .cert-hours { font-size: 0.78rem; color: var(--accent-color); font-weight: 600; }
-        .cert-badge { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.72rem; padding: 0.2rem 0.6rem; background: rgba(16, 185, 129, 0.1); color: var(--success-color); border-radius: 8px; border: 1px solid rgba(16, 185, 129, 0.2); font-weight: 600; }
-
-        .training-section-title { font-size: 1.6rem; font-weight: 700; color: var(--primary-color); margin-bottom: 1.5rem; margin-top: 3rem; display: flex; align-items: center; gap: 0.75rem; }
-        .training-section-title::after { content: ''; flex: 1; height: 2px; background: linear-gradient(90deg, var(--accent-color), transparent); }
-
-        footer { background: var(--gradient-primary); color: var(--white); padding: 3rem 0 2rem; text-align: center; }
-        .social-links { display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem; }
-        .social-link { display: flex; align-items: center; justify-content: center; width: 3rem; height: 3rem; background: rgba(255, 255, 255, 0.1); border-radius: 50%; color: var(--white); text-decoration: none; transition: all 0.3s ease; border: 1px solid rgba(255, 255, 255, 0.2); }
-        .social-link:hover { background: var(--accent-color); transform: translateY(-2px); box-shadow: var(--shadow-lg); }
-        @media (max-width: 768px) {
-            .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--primary-color); flex-direction: column; padding: 1rem 2rem; border-top: 1px solid rgba(59, 130, 246, 0.1); }
-            .nav-links.active { display: flex; }
-            .mobile-menu { display: block; }
-            .hero h1 { font-size: 2.5rem; }
-            .hero-subtitle { font-size: 1.2rem; }
-            .cta-buttons { flex-direction: column; align-items: center; }
-            .contact-info { flex-direction: column; gap: 1rem; }
-            .experience-timeline::before { left: 1rem; }
-            .experience-item { padding-left: 3rem; }
-            .experience-item::before { left: 0.25rem; }
-            .section-title { font-size: 2rem; }
-            .certifications-grid { grid-template-columns: 1fr; }
-        }
-        @media (max-width: 480px) {
-            .nav-container, .container { padding: 0 1rem; }
-            .hero-content { padding: 0 1rem; }
-            .card { padding: 1.5rem; }
-        }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        .animate-fade-in { animation: fadeInUp 0.6s ease-out; }
-    </style>
+.hero:before{content:"";position:absolute;left:50%;top:38%;width:min(900px,90vw);height:520px;transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(47,107,255,.22),rgba(124,108,255,.10) 50%,transparent);filter:blur(30px);pointer-events:none;z-index:-1}
+.hero{position:relative}
+.hc{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:0 0 40px}
+.hc span{padding:9px 20px;border-radius:99px;border:1px solid var(--bd);background:rgba(13,29,46,.6);font-size:16px;font-weight:500;color:#dbe6f5}
+.xg{display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:1120px;margin:auto}
+.xc{border:1px solid var(--bd);border-radius:32px;background:var(--cd);padding:40px;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.xc.ai{background:linear-gradient(145deg,#1a1633,#0d0b1d);border-color:#2b2552}
+.xc h3{font-size:30px;font-weight:700;margin-bottom:6px}.xc.ai h3 em{font-style:normal;color:var(--ai)}.xc:not(.ai) h3 em{font-style:normal;color:var(--bl)}
+.xc>p{color:var(--mu);font-size:17px;margin-bottom:18px}
+.xc ul{list-style:none;padding:0;display:grid;gap:12px}
+.xc li{padding-left:28px;position:relative;color:#d8dee9;font-size:17px}
+.xc li:before{content:"◆";position:absolute;left:0;color:var(--bl);font-size:13px;top:5px}.xc.ai li:before{color:var(--ai)}
+.xx{max-width:1120px;margin:32px auto 0;border:1px dashed #2f4a66;border-radius:28px;padding:28px 36px;text-align:center;color:#c7d2e3;font-size:18px}
+.xx b{display:block;font-size:22px;margin-bottom:6px}
+.fl{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:-20px 0 40px}
+.fl button{padding:11px 24px;border-radius:99px;border:1px solid var(--bd);background:#0a1220;color:#cdd5e2;font:600 16px Inter;cursor:pointer;transition:.2s}
+.fl button:hover{border-color:var(--bl);color:#fff}
+.fl button.on{background:var(--g);border-color:transparent;color:#fff}
+.tgs{position:absolute;top:14px;left:14px;display:flex;gap:6px;z-index:2}
+.tg{padding:4px 11px;border-radius:99px;font-size:12px;font-weight:700;letter-spacing:.04em;background:rgba(5,10,18,.78);border:1px solid #fff4}
+.tg.xr{color:#6cc6ff}.tg.ai{color:#c4b0ff}.tg.web{color:#7ee7b7}.tg.game{color:#ffcf75}
+@media(max-width:980px){.xg{grid-template-columns:1fr}}
+@media(max-width:980px){.cg{grid-template-columns:1fr 1fr}.ab{grid-template-columns:1fr;padding:32px;text-align:center}.ph{margin:auto;width:240px;height:240px}.sts{justify-content:center}nav div{gap:16px;font-size:14px}nav div a:nth-child(n+4){display:none}}
+@media(max-width:640px){.cg{grid-template-columns:1fr}.hero p{font-size:18px}.bt{padding:16px 34px;font-size:17px}}
+@media(prefers-reduced-motion:reduce){.row div,.ms::after{animation:none}*{transition:none!important}}
+</style>
 </head>
-
 <body>
-    <nav id="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo">Hamza Jemaa</a>
-            <div class="mobile-menu" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></div>
-            <div class="nav-links" id="navLinks">
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#experience">Experience</a>
-                <a href="#education">Education</a>
-                <a href="#contact">Contact</a>
-            </div>
-        </div>
-    </nav>
-    <br><br>
+<canvas id="st"></canvas><div id="sb"></div>
+<nav id="nv"><a href="#home" aria-label="Home"><svg viewBox="0 0 46 26" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M9 2h28c4 0 7 3 7 8v3c0 4-3 7-7 7-4 0-5-2-8-3-3-1-9-1-12 0-3 1-4 3-8 3-4 0-6-3-6-7v-3C3 5 5 2 9 2z"/></svg></a>
+<div><a href="#home">Home</a><a href="#about">About</a><a href="#expertise">Expertise</a><a href="#skills">Skills</a><a href="#achievements">Achievements</a><a href="#projects">Projects</a><a href="#hackathons">Hackathons</a><a href="#contact">Contact</a></div></nav>
 
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <div class="profile-image">
-                <img src="Photo hamza jemaa.png" alt="" width="150" height="150" style="border-radius: 50%;">
-            </div>
-            <h1>Hamza Jemaa</h1>
-            <p class="hero-subtitle">Software Engineer & Full-Stack Developer</p>
-            <p class="hero-description">
-                Passionate engineering student specializing in web development, business intelligence, and DevOps. 
-                Building scalable solutions and turning ideas into impactful digital experiences.
-            </p>
-            <div class="cta-buttons">
-                <a href="#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Get In Touch</a>
-                <a href="#experience" class="btn btn-outline"><i class="fas fa-briefcase"></i> View My Work</a>
-            </div>
-            <div class="contact-info" id="contact">
-                <div class="contact-item"><i class="fas fa-phone"></i><span>+216 51 075 734</span></div>
-                <div class="contact-item"><i class="fas fa-envelope"></i><span>jemahamza81@gmail.com</span></div>
-                <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>Tunis, Tunisia</span></div>
-            </div>
-        </div>
-    </section>
+<main>
+<section class="hero" id="home"><div>
+  <small>Hamza Jemaa · XR &amp; AI Engineer</small>
+  <h1>Building Intelligent<br><span class="g">Immersive Realities</span></h1>
+  <p>I'm a Software Engineer working where XR meets AI, from VR serious games and 4D reconstruction to reinforcement learning, computer vision and RAG systems.</p>
+  <div class="hc"><span>🥽 XR / VR / AR</span><span>🧠 Artificial Intelligence</span><span>🌐 Full-Stack</span></div>
+  <a class="bt p" href="#contact">Let's Connect</a><a class="bt" href="#about">Get to know me</a>
+  <div class="ms"></div>
+</div></section>
 
-    <main class="main-content">
-        <div class="container">
+<section id="about"><div class="w">
+  <h2>About <span class="g">Me</span></h2><p class="sub">A brief introduction to my background and experience.</p>
+  <div class="ab">
+    <div class="ph"><img src="Photo%20hamza%20jemaa.png" alt="Hamza Jemaa" onerror="this.outerHTML='<i>HJ</i>'"></div>
+    <div><h3>Hamza Jemaa</h3><div class="r">Software Engineer, XR & AI Creator</div>
+      <p>Focused on XR (VR/AR) and artificial intelligence — computer vision, reinforcement learning and RAG — plus full-stack development. Engineering student in Computer Science and Multimedia at ISAMM (2027), Best Graduation Project Award 2024.</p>
+      <q>"Real problems deserve immersive, intelligent solutions."</q>
+      <div class="sts"><div><b>16+</b><span>Projects</span></div><div><b>4</b><span>Awards</span></div><div><b>3</b><span>Internships</span></div><div><b>2027</b><span>Engineer degree</span></div></div>
+      <a class="bt p" style="margin:0" href="CV_Hamza_Jemaa_FR_FULLCV.html" target="_blank">Check my Resume</a></div>
+  </div>
+</div></section>
 
-            <!-- About -->
-            <section class="section" id="about">
-                <div class="section-header">
-                    <h2 class="section-title">About Me</h2>
-                    <p class="section-subtitle">Engineering student with a passion for creating innovative digital solutions</p>
-                </div>
-                <div class="card">
-                    <p>I am an engineering student specializing in Computer Science and Multimedia with strong foundations in web development, Business Intelligence (BI), DevOps, and UX/UI design. I excel at analyzing complex problems and providing logical, scalable solutions.</p>
-                    <br>
-                    <p>As a dedicated team player with a commitment to excellence, I strive to build secure, scalable, and user-centric solutions. I thrive when collaborating with cross-functional teams to deliver innovative and efficient digital products that make a real impact.</p>
-                </div>
-            </section>
+<section id="expertise"><div class="w">
+  <h2>My <span class="g">Expertise</span></h2><p class="sub">Two worlds, one skill set: immersive experiences and intelligent systems.</p>
+  <div class="xg">
+    <div class="xc"><h3>🥽 <em>XR</em> &amp; Immersive</h3><p>Designing and building experiences people step into.</p><ul>
+      <li>VR experiences and serious games with Unity and Meta Quest</li>
+      <li>Simulations: real-world maps, live traffic, digital twins</li>
+      <li>WebGL / Three.js worlds with WebRTC multiplayer</li>
+      <li>Gaussian Splatting and 4D human reconstruction</li>
+      <li>3D assets and environments with Blender</li></ul></div>
+    <div class="xc ai"><h3>🧠 <em>AI</em> &amp; Intelligent Systems</h3><p>Models and pipelines that make products smarter.</p><ul>
+      <li>Reinforcement learning (PPO, Gymnasium)</li>
+      <li>Computer vision: pose, face, attention and object analysis</li>
+      <li>RAG assistants with LangChain, fully local and multilingual</li>
+      <li>Machine learning and forecasting with PyTorch and Scikit-learn</li>
+      <li>AI-assisted tools: summaries, quizzes, voice and text copilots</li></ul></div>
+  </div>
+  <div class="xx"><b>Where XR meets AI</b>A PPO agent scoring police officers live in VR · AI-assisted point-cloud selection for Gaussian reconstructions · webcam pose transferred to a 3D avatar.</div>
+  <hr>
+</div></section>
 
-            <!-- Skills -->
-            <section class="section" id="skills">
-                <div class="section-header">
-                    <h2 class="section-title">Technical Skills</h2>
-                    <p class="section-subtitle">A comprehensive toolkit for modern software development</p>
-                </div>
-                <div class="skills-grid">
-                    <div class="card">
-                        <div class="skill-category">
-                            <h3><i class="fas fa-code"></i> Programming Languages</h3>
-                            <div class="skill-tags">
-                                <span class="skill-tag">JavaScript</span>
-                                <span class="skill-tag">TypeScript</span>
-                                <span class="skill-tag">Python</span>
-                                <span class="skill-tag">Java/JEE</span>
-                                <span class="skill-tag">PHP</span>
-                                <span class="skill-tag">C</span>
-                                <span class="skill-tag">C++</span>
-                                <span class="skill-tag">C#</span>
-                                <span class="skill-tag">SQL</span>
-                                <span class="skill-tag">HTML5</span>
-                                <span class="skill-tag">CSS3</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="skill-category">
-                            <h3><i class="fas fa-layer-group"></i> Frameworks & Libraries</h3>
-                            <div class="skill-tags">
-                                <span class="skill-tag">Angular</span>
-                                <span class="skill-tag">Vue.js 3</span>
-                                <span class="skill-tag">Node.js</span>
-                                <span class="skill-tag">Express.js</span>
-                                <span class="skill-tag">React</span>
-                                <span class="skill-tag">Flask</span>
-                                <span class="skill-tag">Bootstrap</span>
-                                <span class="skill-tag">FastAPI</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="skill-category">
-                            <h3><i class="fas fa-cube"></i> 3D, Graphics & Computer Vision</h3>
-                            <div class="skill-tags">
-                                <span class="skill-tag">Three.js</span>
-                                <span class="skill-tag">WebGL</span>
-                                <span class="skill-tag">OpenGL</span>
-                                <span class="skill-tag">GLSL</span>
-                                <span class="skill-tag">MediaPipe</span>
-                                <span class="skill-tag">OpenCV</span>
-                                <span class="skill-tag">WebRTC</span>
-                                <span class="skill-tag">SUMO</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="skill-category">
-                            <h3><i class="fas fa-chart-bar"></i> BI & Data Tools</h3>
-                            <div class="skill-tags">
-                                <span class="skill-tag">Power BI</span>
-                                <span class="skill-tag">IBM SPSS</span>
-                                <span class="skill-tag">SSMS</span>
-                                <span class="skill-tag">SSIS</span>
-                                <span class="skill-tag">SSAS</span>
-                                <span class="skill-tag">Oracle</span>
-                                <span class="skill-tag">MongoDB</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="skill-category">
-                            <h3><i class="fas fa-brain"></i> AI & Machine Learning</h3>
-                            <div class="skill-tags">
-                                <span class="skill-tag">Scikit-learn</span>
-                                <span class="skill-tag">Stable-Baselines3 (PPO)</span>
-                                <span class="skill-tag">Sentence-BERT</span>
-                                <span class="skill-tag">FAISS</span>
-                                <span class="skill-tag">Transformers</span>
-                                <span class="skill-tag">Pandas</span>
-                                <span class="skill-tag">NumPy</span>
-                                <span class="skill-tag">PyTorch</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="skill-category">
-                            <h3><i class="fas fa-cloud"></i> DevOps & Cloud</h3>
-                            <div class="skill-tags">
-                                <span class="skill-tag">Docker</span>
-                                <span class="skill-tag">Apache Kafka</span>
-                                <span class="skill-tag">Keycloak</span>
-                                <span class="skill-tag">Git</span>
-                                <span class="skill-tag">Linux/Unix</span>
-                                <span class="skill-tag">LXD</span>
-                                <span class="skill-tag">ZeroMQ</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="skill-category">
-                            <h3><i class="fas fa-palette"></i> Design & Tools</h3>
-                            <div class="skill-tags">
-                                <span class="skill-tag">Figma</span>
-                                <span class="skill-tag">UX/UI Design</span>
-                                <span class="skill-tag">Prototyping</span>
-                                <span class="skill-tag">VS Code</span>
-                                <span class="skill-tag">Balsamic</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="skill-category">
-                            <h3><i class="fas fa-gamepad"></i> Game Development</h3>
-                            <div class="skill-tags">
-                                <span class="skill-tag">Unity</span>
-                                <span class="skill-tag">Blender</span>
-                                <span class="skill-tag">Game AI</span>
-                                <span class="skill-tag">2D/3D Design</span>
-                                <span class="skill-tag">Meta Quest 3 (VR)</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+<section id="skills"><div class="w">
+  <h2>Technical <span class="g">Skills</span></h2><p class="sub">My toolbox for creating digital experiences</p>
+  <div class="row"><div id="r1"></div></div><div class="row rv"><div id="r2"></div></div>
+  <hr>
+</div></section>
 
-            <!-- Experience -->
-            <section class="section" id="experience">
-                <div class="section-header">
-                    <h2 class="section-title">Professional Experience</h2>
-                    <p class="section-subtitle">Building impactful solutions across various domains</p>
-                </div>
+<section id="achievements"><div class="w">
+  <h2>My <span class="g">Achievements</span></h2><p class="sub">Milestones and recognitions throughout my journey.</p>
+  <div class="cg" id="ach"></div><button class="sm" id="am">Show More Achievements</button><hr>
+</div></section>
 
-                <div class="experience-timeline">
+<section id="projects"><div class="w">
+  <h2>My <span class="g">Projects</span></h2><p class="sub">Building the Future, One Idea at a Time</p>
+  <div class="fl" id="fl"><button class="on" data-f="all">All</button><button data-f="xr">XR / VR</button><button data-f="ai">AI</button><button data-f="web">Web</button><button data-f="game">Games</button></div>
+  <div class="cg" id="pj"></div><button class="sm" id="pm">Show More Projects</button><hr>
+</div></section>
 
-                    <div class="experience-item featured">
-                        <div class="card card-featured">
-                            <div class="experience-header">
-                                <div class="badge-featured"><i class="fas fa-star"></i> Institutional Collaboration</div>
-                                <h3 class="experience-title">Creator & Lead Developer — Serious Game VR</h3>
-                                <p class="experience-company">Ministère de l'Intérieur & United Nations & ONSR</p>
-                                <span class="experience-date">2025 — 2026</span>
-                            </div>
-                            <div class="experience-tech">
-                                <span class="tech-tag">Unity 3D</span><span class="tech-tag">Python</span><span class="tech-tag">SUMO</span><span class="tech-tag">Meta Quest 3</span><span class="tech-tag">Stable-Baselines3 (PPO)</span><span class="tech-tag">FastAPI</span><span class="tech-tag">ZeroMQ</span><span class="tech-tag">C#</span><span class="tech-tag">OpenStreetMap</span>
-                            </div>
-                            <div class="experience-description">
-                                <ul>
-                                    <li>Designed and developed an immersive VR serious game for training traffic police officers in realistic urban traffic scenarios (Bardo district, Tunis), commissioned by the Ministère de l'Intérieur, the United Nations, and ONSR.</li>
-                                    <li>Modelled a real-world roundabout from <b>OpenStreetMap</b> data and coupled the <b>SUMO</b> traffic simulator with a <b>Unity 3D / VR</b> environment in real time via <b>ZeroMQ</b>.</li>
-                                    <li>Implemented a <b>Reinforcement Learning agent (PPO)</b> using Stable-Baselines3 to optimise traffic-light control, serving as an objective reference for evaluating officer decisions during training.</li>
-                                    <li>Built a <b>PoliceDecisionTracker</b> module that compares officer actions to RL recommendations in real time, computing a weighted performance score and generating detailed session reports (CSV/JSON).</li>
-                                    <li>Integrated a <b>FastAPI</b> backend and WebSocket dashboard enabling live metrics monitoring by the instructor during training sessions.</li>
-                                    <li>Deployed the experience on <b>Meta Quest 3</b>, ensuring smooth 72fps VR rendering alongside real-time simulation data streaming.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+<section id="hackathons"><div class="w">
+  <h2>My <span class="g">Hackathons</span></h2><p class="sub">Competitive Innovation and Creative Problem Solving</p>
+  <div class="cg" id="hk"></div><hr>
+</div></section>
 
-                    <div class="experience-item featured">
-                        <div class="card card-featured">
-                            <div class="experience-header">
-                                <div class="badge-featured"><i class="fas fa-rocket"></i> Ongoing Project</div>
-                                <h3 class="experience-title">Creator & Full-Stack Developer — Lion Editor</h3>
-                                <p class="experience-company">Online Python IDE — 2025 → Present</p>
-                                <span class="experience-date">2025 — Present</span>
-                            </div>
-                            <div class="experience-tech">
-                                <span class="tech-tag">Python</span><span class="tech-tag">Flask</span><span class="tech-tag">Angular</span><span class="tech-tag">Node.js</span><span class="tech-tag">LXD</span><span class="tech-tag">Keycloak</span><span class="tech-tag">AI APIs</span>
-                            </div>
-                            <div class="experience-description">
-                                <ul>
-                                    <li>Led the end-to-end development of <b>Lion Editor</b>, an online Python IDE enabling users to write, save, and execute Python code inside secure <b>LXD containers</b>, ensuring full isolation between user sessions.</li>
-                                    <li>Integrated AI assistance to help users <b>generate, correct, and explain code</b> based on text or voice commands, streamlining the learning and development workflow.</li>
-                                    <li>Implemented <b>web scraping</b> of GitHub and Anaconda repositories to surface up-to-date Python package suggestions in real time directly within the editor.</li>
-                                    <li>Architected a <b>microservices</b> backend, delegating voice transcription, package classification, and error analysis to dedicated independent services for scalability and maintainability.</li>
-                                    <li>Secured the platform with <b>Keycloak</b>-based authentication and role management, supporting multi-user access control for educators and learners.</li>
-                                    <li>Delivered learning-focused features including instant execution feedback, step-by-step error explanations, and downloadable progress reports.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+<section id="contact"><div class="w">
+  <h2>Get In <span class="g">Touch</span></h2><p class="sub">Have a project in mind or just want to say hi? I'd love to hear from you.</p>
+  <div class="ct"><a class="ci" href="mailto:jemahamza81@gmail.com"><i>✉</i><div><b>Email</b><span>jemahamza81@gmail.com</span></div></a><a class="ci" href="tel:+21651075734"><i>✆</i><div><b>Phone</b><span>+216 51 075 734</span></div></a></div>
+  <div class="so"><a href="https://linkedin.com/in/jemaa-hamza" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/Hamzajema" target="_blank" rel="noopener">GitHub</a></div>
+  <footer>© 2026 Hamza Jemaa</footer>
+</div></section>
+</main>
 
-                    <div class="experience-item featured">
-                        <div class="card card-featured">
-                            <div class="experience-header">
-                                <div class="badge-featured"><i class="fas fa-star"></i> Featured Project</div>
-                                <h3 class="experience-title">Creator & Full-Stack Developer — Hajj Simulation</h3>
-                                <p class="experience-company">Interactive 3D Pilgrimage Experience — Personal Project</p>
-                                <span class="experience-date">2025</span>
-                            </div>
-                            <div class="experience-tech">
-                                <span class="tech-tag">Three.js</span><span class="tech-tag">WebGL</span><span class="tech-tag">JavaScript</span><span class="tech-tag">WebRTC</span><span class="tech-tag">PeerJS</span><span class="tech-tag">HTML/CSS</span>
-                            </div>
-                            <div class="experience-description">
-                                <ul>
-                                    <li>Built an immersive 3D browser-based simulation of the Hajj pilgrimage, rendering sacred sites with realistic lighting, crowds, and architectural detail using <b>Three.js</b> and <b>WebGL</b>.</li>
-                                    <li>Implemented a first-person walk mode with free-roam navigation, crosshair HUD, speed control, and a compass.</li>
-                                    <li>Developed a guided step-by-step pilgrimage system with 10+ rituals, each with contextual information cards, progress tracking, and animated transitions.</li>
-                                    <li>Integrated real-time multiplayer using <b>WebRTC (PeerJS)</b>, enabling pilgrims to walk Hajj together with live avatar position sync and floating name tags.</li>
-                                    <li>Designed a full avatar customization system with serialization for multiplayer transmission.</li>
-                                    <li>Built a responsive UI with an Arabic-styled design system, mini-map, location badge, and VR mode.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+<div id="m" role="dialog" aria-modal="true"><div class="mb"><button class="x" aria-label="Close">×</button><div id="mc"></div></div></div>
 
-                    <div class="experience-item featured">
-                        <div class="card card-featured">
-                            <div class="experience-header">
-                                <div class="badge-featured"><i class="fas fa-rocket"></i> Featured Project</div>
-                                <h3 class="experience-title">Creator & Developer — 3D Avatar Motion Transfer System</h3>
-                                <p class="experience-company">Real-Time Motion Capture Web App — Personal Project</p>
-                                <span class="experience-date">2025</span>
-                            </div>
-                            <div class="experience-tech">
-                                <span class="tech-tag">Three.js</span><span class="tech-tag">WebGL</span><span class="tech-tag">MediaPipe</span><span class="tech-tag">JavaScript</span><span class="tech-tag">Inverse Kinematics</span><span class="tech-tag">HTML/CSS</span>
-                            </div>
-                            <div class="experience-description">
-                                <ul>
-                                    <li>Built a real-time full-body motion capture system that transfers live webcam pose data onto a fully rigged 3D avatar using <b>MediaPipe Pose</b> landmark detection and <b>Three.js</b> skeletal animation.</li>
-                                    <li>Engineered a custom <b>inverse kinematics pipeline</b> mapping 33 body landmarks to avatar bone rotations using quaternion math.</li>
-                                    <li>Developed a procedural avatar creator with granular customization serialized into a portable avatar definition object.</li>
-                                    <li>Implemented a full <b>bone calibration system</b> with per-joint scale, offset, and sign controls.</li>
-                                    <li>Designed a professional split-panel IDE-style UI with real-time bone activity bars, confidence meter, FPS counter, and mirror mode.</li>
-                                    <li>Architected the entire system as a single-file zero-dependency browser app with modular separation between layers.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="card">
-                            <div class="experience-header">
-                                <h3 class="experience-title">Creator & Full-Stack Developer</h3>
-                                <p class="experience-company">Employee Monitoring & Well-being System - Academic Project</p>
-                                <span class="experience-date">October 2025 - December 2025</span>
-                            </div>
-                            <div class="experience-tech">
-                                <span class="tech-tag">Python</span><span class="tech-tag">Flask</span><span class="tech-tag">OpenCV</span><span class="tech-tag">SocketIO</span><span class="tech-tag">Multiprocessing</span><span class="tech-tag">SQLite</span><span class="tech-tag">Oracle DB</span><span class="tech-tag">HTML/CSS/JS</span>
-                            </div>
-                            <div class="experience-description">
-                                <ul>
-                                    <li>Developed a comprehensive AI-powered system to monitor employee productivity, health, and attention in real-time.</li>
-                                    <li>Implemented facial recognition and liveness detection for secure access control and safety monitoring.</li>
-                                    <li>Built real-time attention and posture tracking using <b>OpenCV</b> and concurrent processing with <b>Multiprocessing</b>.</li>
-                                    <li>Integrated alerting system via <b>SocketIO</b> for immediate notifications on fatigue, distractions, or unauthorized access.</li>
-                                    <li>Ensured privacy and GDPR compliance with optional data anonymization, consent management, and encrypted storage.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="card">
-                            <div class="experience-header">
-                                <h3 class="experience-title">Creator & Full-Stack Developer</h3>
-                                <p class="experience-company">AI Video Processing Application - Personal Project</p>
-                                <span class="experience-date">November 2025 - December 2025</span>
-                            </div>
-                            <div class="experience-tech">
-                                <span class="tech-tag">Python</span><span class="tech-tag">OpenCV</span><span class="tech-tag">NumPy</span><span class="tech-tag">FFmpeg</span><span class="tech-tag">Haar Cascades</span><span class="tech-tag">HSV Color Segmentation</span><span class="tech-tag">JavaScript/HTML/CSS</span>
-                            </div>
-                            <div class="experience-description">
-                                <ul>
-                                    <li>Developed a modular video processing system applying operations such as grayscale, edge detection, blur, sharpening, face detection, motion analysis, and object detection.</li>
-                                    <li>Implemented a <b>parallel processing pipeline</b> to split videos into chunks, apply selected operations frame-by-frame, and reassemble efficiently.</li>
-                                    <li>Generated real-time analytics including face counts, motion intensity, object tracking, and edge density.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="card">
-                            <div class="experience-header">
-                                <h3 class="experience-title">Creator & Graphics Developer — 2D OpenGL Scene Animation</h3>
-                                <p class="experience-company">Real-Time Scene Animation Engine — Academic / Personal Project</p>
-                                <span class="experience-date">2025</span>
-                            </div>
-                            <div class="experience-tech">
-                                <span class="tech-tag">C++</span><span class="tech-tag">OpenGL</span><span class="tech-tag">GLFW</span><span class="tech-tag">GLAD</span><span class="tech-tag">GLSL</span><span class="tech-tag">stb_image</span>
-                            </div>
-                            <div class="experience-description">
-                                <ul>
-                                    <li>Built a real-time 2D scene animation engine from scratch in <b>C++</b> using raw <b>OpenGL 3.3 Core Profile</b>.</li>
-                                    <li>Designed and implemented custom <b>GLSL vertex and fragment shaders</b> supporting per-object tinting, alpha blending, and smooth animation effects.</li>
-                                    <li>Built a multi-scene state machine with three fully animated scenes and smooth fade transitions.</li>
-                                    <li>Implemented rich visual effects including animated fire with sinusoidal flickering, oscillating smoke, and rhythmic alert flashes.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="card">
-                            <div class="experience-header">
-                                <h3 class="experience-title">Creator & Full-Stack Developer</h3>
-                                <p class="experience-company">Study Notebook App - Personal Project</p>
-                                <span class="experience-date">September 2025 - October 2025</span>
-                            </div>
-                            <div class="experience-tech">
-                                <span class="tech-tag">React</span><span class="tech-tag">Express.js</span><span class="tech-tag">Node.js</span><span class="tech-tag">Lunr.js</span><span class="tech-tag">IndexedDB</span><span class="tech-tag">AI APIs</span>
-                            </div>
-                            <div class="experience-description">
-                                <ul>
-                                    <li>Developed an AI-enhanced study notebook web app for organizing and analyzing study notes efficiently.</li>
-                                    <li>Integrated optional AI features for automatic summarization, quiz generation, and topic extraction.</li>
-                                    <li>Built analytics dashboards to track study sessions, note activity, tag usage, and time spent per subject.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="card">
-                            <div class="experience-header">
-                                <h3 class="experience-title">Creator & Lead Developer</h3>
-                                <p class="experience-company">Tunisia Legal Q&A System — Hackathon Project</p>
-                                <span class="experience-date">December 2024 - January 2025</span>
-                            </div>
-                            <div class="experience-tech">
-                                <span class="tech-tag">Python</span><span class="tech-tag">Flask</span><span class="tech-tag">Transformers</span><span class="tech-tag">Sentence-BERT</span><span class="tech-tag">FAISS</span><span class="tech-tag">CUDA / PyTorch</span>
-                            </div>
-                            <div class="experience-description">
-                                <ul>
-                                    <li>Built a Retrieval-Augmented Generation (RAG) system to answer Tunisian legal questions using only local models — no external API keys required.</li>
-                                    <li>Implemented PDF processing pipeline to extract, chunk, embed and cache document vectors for fast retrieval.</li>
-                                    <li>Integrated optional LLM generation (Phi-2) with multi-language prompts (EN/FR/AR) and graceful degradation.</li>
-                                    <li>Prioritized privacy and security — all processing runs locally, PDFs never leave the machine.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="card">
-                            <div class="experience-header">
-                                <h3 class="experience-title">Full-Stack Developer Intern</h3>
-                                <p class="experience-company">Tunisair - Summer Internship</p>
-                                <span class="experience-date">July 2024 - September 2024</span>
-                            </div>
-                            <div class="experience-tech">
-                                <span class="tech-tag">Python</span><span class="tech-tag">Flask</span><span class="tech-tag">Angular</span><span class="tech-tag">Oracle Database</span><span class="tech-tag">JWT Authentication</span><span class="tech-tag">Scikit-learn</span><span class="tech-tag">Pandas</span><span class="tech-tag">Docker</span>
-                            </div>
-                            <div class="experience-description">
-                                <ul>
-                                    <li>Developed <b>Tunisair Dashboard</b>, a full-stack web application for data-driven decision-making and operational optimization.</li>
-                                    <li>Implemented secure architecture with <b>Flask (backend)</b> and <b>Angular (frontend)</b> integrated with an <b>Oracle database</b>.</li>
-                                    <li>Integrated a <b>machine learning module</b> for revenue prediction, customer segmentation, and route profitability analysis.</li>
-                                    <li>Deployed the complete application using <b>Waitress</b> server ensuring scalability and OWASP security compliance.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="card">
-                            <div class="experience-header">
-                                <h3 class="experience-title">Game Developer & AI Programmer</h3>
-                                <p class="experience-company">2D Action-RPG Adventure Game - Personal Project</p>
-                                <span class="experience-date">October 2024 - January 2025</span>
-                            </div>
-                            <div class="experience-tech">
-                                <span class="tech-tag">Unity</span><span class="tech-tag">C#</span><span class="tech-tag">Blender</span><span class="tech-tag">Game AI</span><span class="tech-tag">UI/UX</span>
-                            </div>
-                            <div class="experience-description">
-                                <ul>
-                                    <li>Designed and developed 2D action-RPG with five playable characters and level progression.</li>
-                                    <li>Implemented enemy AI with dynamic chase behavior and real-time combat systems.</li>
-                                    <li>Created three complex levels with unique mechanics and interactive environments.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="card">
-                            <div class="experience-header">
-                                <h3 class="experience-title">BI Developer</h3>
-                                <p class="experience-company">Upgradetek Engineering - Internship</p>
-                                <span class="experience-date">January 2024 - May 2024</span>
-                            </div>
-                            <div class="experience-tech">
-                                <span class="tech-tag">Node.js</span><span class="tech-tag">Express</span><span class="tech-tag">Python</span><span class="tech-tag">Flask</span><span class="tech-tag">Angular</span><span class="tech-tag">Apache Kafka</span><span class="tech-tag">Docker</span>
-                            </div>
-                            <div class="experience-description">
-                                <ul>
-                                    <li>Led development of end-to-end BI application for banking product management.</li>
-                                    <li>Implemented Docker containerization and secure Keycloak authentication.</li>
-                                    <li>Integrated Big Data tools (Kafka) to enhance financial forecasting and analytics.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="card">
-                            <div class="experience-header">
-                                <h3 class="experience-title">Turn-Based Strategy Game Developer</h3>
-                                <p class="experience-company">Guerre des Clans - Freelance Project</p>
-                                <span class="experience-date">March 2025 - May 2025</span>
-                            </div>
-                            <div class="experience-tech">
-                                <span class="tech-tag">JavaScript</span><span class="tech-tag">HTML5</span><span class="tech-tag">CSS3</span><span class="tech-tag">AI Pathfinding</span>
-                            </div>
-                            <div class="experience-description">
-                                <ul>
-                                    <li>Developed turn-based strategy game with 10x10 grid battlefield and three unique unit types.</li>
-                                    <li>Implemented sophisticated enemy AI featuring pathfinding, decision-making, and player pursuit.</li>
-                                    <li>Created XP progression system and ability unlocking for enhanced gameplay depth.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="card">
-                            <div class="experience-header">
-                                <h3 class="experience-title">UI/UX Designer</h3>
-                                <p class="experience-company">TuniTrack Heritage Tourism App - Freelance</p>
-                                <span class="experience-date">February 2025 - May 2025</span>
-                            </div>
-                            <div class="experience-tech">
-                                <span class="tech-tag">Figma</span><span class="tech-tag">Adobe XD</span><span class="tech-tag">UX Research</span><span class="tech-tag">Prototyping</span><span class="tech-tag">VR Design</span>
-                            </div>
-                            <div class="experience-description">
-                                <ul>
-                                    <li>Designed comprehensive UI/UX prototype for Tunisian heritage tourism platform.</li>
-                                    <li>Integrated immersive VR tours and game-like navigation with cultural storytelling.</li>
-                                    <li>Optimized user journey across mobile and desktop with intuitive navigation.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="card">
-                            <div class="experience-header">
-                                <h3 class="experience-title">Web Development Intern</h3>
-                                <p class="experience-company">Tunisair - Internship</p>
-                                <span class="experience-date">June 2023 - August 2023</span>
-                            </div>
-                            <div class="experience-tech">
-                                <span class="tech-tag">Flask</span><span class="tech-tag">JavaScript</span><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">Bootstrap</span>
-                            </div>
-                            <div class="experience-description">
-                                <ul>
-                                    <li>Developed web application automating Excel bank statement transformation to AFB120 format.</li>
-                                    <li>Reduced manual processing errors by 85% through automated data validation.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="card">
-                            <div class="experience-header">
-                                <h3 class="experience-title">Full-Stack Web Developer</h3>
-                                <p class="experience-company">CrocoCoder Match Tracking App - Training Project</p>
-                                <span class="experience-date">March 2023 - May 2023</span>
-                            </div>
-                            <div class="experience-tech">
-                                <span class="tech-tag">Angular</span><span class="tech-tag">Node.js</span><span class="tech-tag">Express.js</span><span class="tech-tag">TypeScript</span><span class="tech-tag">Bootstrap</span>
-                            </div>
-                            <div class="experience-description">
-                                <ul>
-                                    <li>Built real-time match tracking application for public-facing sports platforms.</li>
-                                    <li>Implemented mobile-first responsive design improving user engagement by 30%.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="experience-item">
-                        <div class="card">
-                            <div class="experience-header">
-                                <h3 class="experience-title">BI Dashboard Developer</h3>
-                                <p class="experience-company">Adventure Work - Freelance</p>
-                                <span class="experience-date">February 2023 - April 2023</span>
-                            </div>
-                            <div class="experience-tech">
-                                <span class="tech-tag">Microsoft SQL Server</span><span class="tech-tag">SSIS</span><span class="tech-tag">SSAS</span><span class="tech-tag">Power BI</span>
-                            </div>
-                            <div class="experience-description">
-                                <ul>
-                                    <li>Developed strategic HR dashboards to improve resource management and decision-making.</li>
-                                    <li>Created comprehensive KPI visualizations in Power BI for executive reporting.</li>
-                                    <li>Streamlined HR analytics processes reducing report generation time by 60%.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-
-            <!-- Education -->
-            <section class="section" id="education">
-                <div class="section-header">
-                    <h2 class="section-title">Education & Training</h2>
-                    <p class="section-subtitle">Building a strong foundation in computer science and business</p>
-                </div>
-                <div class="education-grid">
-                    <div class="card">
-                        <h3>Engineering Degree in Computer Science and Multimedia <span class="education-status">In Progress</span></h3>
-                        <p class="education-institution">ISAMM, University of Manouba</p>
-                        <p>2024 - 2027</p>
-                    </div>
-                    <div class="card">
-                        <h3>Bachelor's in Business Computing (BI)</h3>
-                        <p class="education-institution">FSEGT Manar University</p>
-                        <p>2021 - 2024</p>
-                    </div>
-                    <div class="card">
-                        <h3>Baccalaureate in Mathematics</h3>
-                        <p class="education-institution">Lycée Secondaire Cité Ibn Khaldoun</p>
-                        <p>2020 - 2021</p>
-                    </div>
-                </div>
-
-                <div class="section-header" style="margin-top: 4rem; margin-bottom: 2rem;">
-                    <h3 style="font-size: 2rem; color: var(--primary-color);">Professional Training</h3>
-                </div>
-                <div class="card">
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
-                        <div><h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">2023</h4><p>MEAN Stack Training (Node.js, Angular, Express.js)</p><small style="color: var(--medium-gray);">CrocoCoder</small></div>
-                        <div><h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">2023</h4><p>Digital Community Currencies Training</p><small style="color: var(--medium-gray);">Berlin School of Economics and Law</small></div>
-                        <div><h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">2022-2023</h4><p>Digital Marketing Training</p><small style="color: var(--medium-gray);">Université Centrale</small></div>
-                        <div><h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">2021-2022</h4><p>Python, Big Data, and Data Science Training</p><small style="color: var(--medium-gray);">Self-directed Learning</small></div>
-                        <div><h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">2024</h4><p>CCNA 1 Training</p><small style="color: var(--medium-gray);">Cisco</small></div>
-                        <div><h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">Dec 2025</h4><p>CCNA: Switching, Routing, and Wireless Essentials</p><small style="color: var(--medium-gray);">Cisco Networking Academy — ISAMM</small></div>
-                        <div><h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">Nov 2025</h4><p>Supervised Learning with scikit-learn</p><small style="color: var(--medium-gray);">DataCamp</small></div>
-                        <div><h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">Dec 2025</h4><p>Introduction to AWS Boto in Python</p><small style="color: var(--medium-gray);">DataCamp</small></div>
-                        <div><h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">Jan 2026</h4><p>AWS Cloud Technology and Services Concepts</p><small style="color: var(--medium-gray);">DataCamp</small></div>
-                        <div><h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">Jan 2026</h4><p>Streaming Data with AWS Kinesis and Lambda</p><small style="color: var(--medium-gray);">DataCamp</small></div>
-                        <div><h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">Jan 2026</h4><p>Unsupervised Learning in Python</p><small style="color: var(--medium-gray);">DataCamp</small></div>
-                        <div><h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">Jan 2026</h4><p>Introduction to Deep Learning with PyTorch</p><small style="color: var(--medium-gray);">DataCamp</small></div>
-                        <div><h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">Feb 2026</h4><p>Machine Learning Fundamentals in Python</p><small style="color: var(--medium-gray);">DataCamp</small></div>
-                        <div><h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">Feb 2026</h4><p>Reinforcement Learning with Gymnasium in Python</p><small style="color: var(--medium-gray);">DataCamp</small></div>
-                    </div>
-                </div>
-
-            </section>
-
-            <!-- Languages & Soft Skills -->
-            <section class="section">
-                <div class="section-header">
-                    <h2 class="section-title">Languages & Core Competencies</h2>
-                </div>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                    <div class="card">
-                        <h3 style="color: var(--primary-color); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;"><i class="fas fa-language"></i> Languages</h3>
-                        <div style="display: flex; flex-direction: column; gap: 1rem;">
-                            <div style="display: flex; justify-content: space-between; align-items: center;"><span>French</span><span style="color: var(--success-color); font-weight: 600;">Fluent</span></div>
-                            <div style="display: flex; justify-content: space-between; align-items: center;"><span>English</span><span style="color: var(--success-color); font-weight: 600;">Professional</span></div>
-                            <div style="display: flex; justify-content: space-between; align-items: center;"><span>Arabic</span><span style="color: var(--success-color); font-weight: 600;">Native</span></div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <h3 style="color: var(--primary-color); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;"><i class="fas fa-lightbulb"></i> Core Strengths</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Problem Solving</span>
-                            <span class="skill-tag">Team Leadership</span>
-                            <span class="skill-tag">Critical Thinking</span>
-                            <span class="skill-tag">Project Management</span>
-                            <span class="skill-tag">Communication</span>
-                            <span class="skill-tag">Adaptability</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-        </div>
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="social-links">
-                <a href="https://github.com/Hamzajema" class="social-link" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/jemaa-hamza" class="social-link" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:jemahamza81@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
-            </div>
-            <p style="margin-bottom: 1rem; opacity: 0.9;">Let's build something amazing together</p>
-            <p style="font-size: 0.9rem; opacity: 0.7;">&copy; 2025 Hamza Jemaa. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        function toggleMobileMenu() {
-            const navLinks = document.getElementById('navLinks');
-            navLinks.classList.toggle('active');
-        }
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.getElementById('navLinks').classList.remove('active');
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    const headerOffset = 80;
-                    const elementPosition = targetElement.offsetTop;
-                    const offsetPosition = elementPosition - headerOffset;
-                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-                }
-            });
-        });
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 100) {
-                navbar.style.background = 'rgba(15, 23, 42, 0.98)';
-                navbar.style.boxShadow = '0 4px 6px -1px rgb(0 0 0 / 0.1)';
-            } else {
-                navbar.style.background = 'rgba(15, 23, 42, 0.95)';
-                navbar.style.boxShadow = 'none';
-            }
-        });
-        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) { entry.target.classList.add('animate-fade-in'); }
-            });
-        }, observerOptions);
-        document.addEventListener('DOMContentLoaded', () => {
-            const elementsToAnimate = document.querySelectorAll('.card, .experience-item, .cert-card');
-            elementsToAnimate.forEach(el => observer.observe(el));
-        });
-        document.addEventListener('click', function(e) {
-            const navLinks = document.getElementById('navLinks');
-            const mobileMenu = document.querySelector('.mobile-menu');
-            if (!navLinks.contains(e.target) && !mobileMenu.contains(e.target)) {
-                navLinks.classList.remove('active');
-            }
-        });
-    </script>
+<script>
+/* ===== EDIT ===== media: YouTube link (https://youtu.be/xxxx) or image path (assets/pic.jpg). "" = colored cover.
+   Fields: c category (xr ai web game), t title, y year, o organisation | type, d description, h cover hue */
+const PJ=[
+{c:"xr ai",t:"4D Gaussian Splatting",y:2026,o:"SARAAB XR Studio | 4D Reconstruction",d:"Adapted the LGM model to a 4-depth-camera rig for human Gaussian reconstructions, plus a Three.js point-cloud editor with RANSAC cleanup and AI-assisted selection.",h:265,media:""},
+{c:"xr ai",t:"VR Traffic Police Training",y:2026,o:"ONSR / Ministry of Interior / UN | Serious Game",d:"Real Bardo roundabout from OpenStreetMap, SUMO coupled to Unity in real time, and a PPO reinforcement-learning agent that scores officer decisions live on Meta Quest.",h:190,media:"https://youtu.be/Go9OZ5fkyWE?si=OZIFULSmLZtXyh3Y"},
+{c:"xr",t:"Aquaverse",y:2026,o:"ATUTAX | VR Experience",d:"Unity 6 VR experience on marine depollution contrasting destructive and good methods, with Blender-made Posidonia, fauna and in-VR comparison videos.",h:195,media:"https://youtu.be/34VKFbzN1ds?si=TtJpE-pld1wo9X8m"},
+{c:"xr",t:"Urban VR Simulator",y:2026,o:"Personal | VR Simulation",d:"A complete virtual city with Tunisian buses modelled from photos, live traffic, and a VR bus ticketing application on Meta Quest 3.",h:215,media:"https://youtu.be/cfjWkN0x3u0?si=E4I3Eun5UXF9NE1n"},
+{c:"xr web",t:"Hajj Simulation",y:2025,o:"Personal | WebGL Experience",d:"Immersive 3D pilgrimage in the browser with 10+ guided rituals, a VR mode and real-time multiplayer avatars over WebRTC.",h:40,media:"https://youtu.be/vgAuCGKVSls?si=lKa0tEHkyt91P3QD"},
+{c:"xr ai",t:"3D Avatar Motion Transfer",y:2025,o:"Personal | Motion Capture",d:"Real-time webcam pose (33 MediaPipe landmarks) transferred to a rigged 3D avatar through a custom inverse-kinematics pipeline.",h:300,media:"https://youtu.be/Z89xXZIScB4?si=Q8sdj7Qr57g3Dbik"},
+{c:"ai web",t:"Lion Editor",y:2025,o:"Personal | AI Web IDE",d:"Online Python IDE running code in isolated LXD containers, with voice and text AI assistance, Keycloak auth and microservices.",h:155,media:""},
+{c:"ai",t:"Employee Monitoring",y:2025,o:"Academic | Computer Vision",d:"Real-time attention and posture tracking with face recognition, liveness detection and privacy-friendly processing.",h:340,media:"https://youtu.be/ZyNojTeNOVM?si=4iYqw8I8Uaq5kBQF"},
+{c:"ai",t:"Tunisia Legal Q&A",y:2025,o:"astroPreneur Hackathon | RAG",d:"Fully local RAG assistant answering Tunisian legal questions in French, English and Arabic from PDF sources.",h:20,media:""},
+{c:"ai",t:"AI Video Processing",y:2025,o:"Personal | Computer Vision",d:"Parallel chunked pipeline for edge, motion, face and object analysis with live analytics dashboards.",h:120,media:"https://youtu.be/m3Ru-IAbmzU?si=t6YgTVmnVjrQyr1M"},
+{c:"ai web",t:"Tunisair Dashboard",y:2024,o:"Tunisair | Decision Support",d:"JWT-secured Flask API, Angular UI, Oracle database and a Scikit-learn module forecasting revenue and route profitability.",h:205,media:""},
+{c:"ai web",t:"Study Notebook App",y:2025,o:"Personal | Web App",d:"Notes app with AI summaries, quiz generation, theme extraction and study analytics.",h:285,media:""},
+{c:"game",t:"2D Action-RPG",y:2025,o:"Personal | Game",d:"Five playable characters, chasing enemy AI, real-time combat and three levels built in Unity.",h:60,media:""},
+{c:"game",t:"Guerre des Clans",y:2025,o:"Freelance | Strategy Game",d:"Turn-based strategy on a 10×10 grid with three unit types, XP, abilities and pathfinding enemy AI.",h:90,media:""},
+{c:"web xr",t:"TuniTrack",y:2025,o:"Freelance | UI/UX",d:"UI/UX prototype for a Tunisian heritage tourism platform with VR tours and game-like navigation.",h:330,media:""}
+];
+const HK=[
+{t:"First Place — Hackathon Digicamp 2",y:2023,o:"FSEGT × Berlin School of Economics | AI + Blockchain",d:"Team project: an AI and blockchain community-currency app letting rural women exchange their production without direct sales.",h:45,media:"https://drive.google.com/file/d/1KRBb5HvNkdErNFYw87wXDHgkFs3vSPSA/view?usp=sharing"},
+{t:"Global Game Jam — 4th Place",y:2026,o:"Global Game Jam | Unity",d:"DarkMaya, a 3D action-cinematic game about Mayan masks and a time-travel storyline, built with a team of three.",h:10,media:""},
+{t:"Third Place — HACK4FUTURE",y:2023,o:"HACK4FUTURE | AI Education",d:"Team project: an AI-powered educational application ranked third at the hackathon.",h:170,media:"https://drive.google.com/file/d/1yYUQg7AKzubz2SOn5xB0JwTkAeIIPutM/view?usp=sharing"},
+{t:"astroPreneur Hackathon",y:2025,o:"astroPreneur | Legal RAG",d:"Built a local retrieval-augmented assistant for Tunisian legal questions in three languages.",h:20,media:"https://youtu.be/AdX-o5nRwtA?si=TAqka0dxVwocohGi"}
+];
+const AC=[
+{t:"Best Graduation Project Award",y:2024,o:"FSEGT | Award",d:"Awarded the Best Graduation Project (Prix du Meilleur PFE) for my final-year work.",h:200,media:"https://youtu.be/_fvoBJ6GseM?si=3P59XIYsxIRLIxr5"},
+{t:"GDG On Campus Recognition",y:2026,o:"GDG On Campus ISAMM | Certificate",d:"Certificate of recognition for my contribution and commitment as a club member in 2025–2026.",h:230,media:""},
+{t:"Machine Learning Certifications",y:2025,o:"DataCamp | Certifications",d:"Supervised and unsupervised learning, deep learning with PyTorch, and reinforcement learning with Gymnasium.",h:280,media:""},
+{t:"AWS Certifications",y:2025,o:"DataCamp | Cloud",d:"AWS cloud concepts, Boto3 automation in Python, and streaming data with Kinesis and Lambda.",h:30,media:""},
+{t:"VR & AR Trainings",y:2025,o:"ATUTAX | Training",d:"VR fundamentals with Rahul Nath and AR creation with Lens Studio led by Dr. Danny P. of the University of Oregon.",h:160,media:""},
+{t:"Unity XR Optimization Workshop",y:2025,o:"ISAMM | Workshop",d:"Workshop on XR optimization in Unity and immersive media, led by Andrew C. Koos at ISAMM.",h:250,media:""},
+{t:"Cisco CCNA 1 & 2",y:2025,o:"Cisco | Networking",d:"Networking certifications covering configuration and troubleshooting.",h:210,media:""}
+];
+const SK=["Unity","C#","Meta XR SDK","OpenXR","Three.js","WebGL","WebRTC","Gaussian Splatting","Blender","Meta Quest","PyTorch","LangChain","RAG","OpenCV","MediaPipe","Scikit-learn","Reinforcement Learning","Gymnasium","Computer Vision","Angular","React","Node.js","Flask","Docker","AWS","Kafka","Figma"];
+const $=s=>document.querySelector(s),yt=u=>(u.match(/(?:youtu\.be\/|v=|embed\/)([\w-]{11})/)||[])[1];
+const reg=[],TG={xr:"XR",ai:"AI",web:"WEB",game:"GAME"};
+function cards(el,arr,n,cls=''){el.innerHTML=arr.slice(0,n).map((p,i)=>{const k=reg.push(p)-1,id=p.media&&yt(p.media),im=p.media&&!id;
+ return `<button class="cd ${cls}" data-k="${k}"><div class="im" style="--h:${p.h}">${p.c?`<div class="tgs">${p.c.split(' ').map(c=>`<span class="tg ${c}">${TG[c]}</span>`).join('')}</div>`:''}${im?`<img src="${p.media}" alt="" loading="lazy">`:''}${id?`<img src="https://i.ytimg.com/vi/${id}/hqdefault.jpg" alt="" loading="lazy"><span class="pp"></span>`:''}${p.media?'':`<em>${p.t.replace(/[^A-Za-z ]/g,'').split(' ').slice(0,2).map(w=>w[0]).join('')}</em>`}</div><div class="tx"><div class="tt"><h3>${p.t}</h3><span class="yr">${p.y}</span></div><div class="mt">${p.o}</div><p>${p.d}</p><span class="dc">Discover ↗</span></div></button>`}).join('')}
+const sec=(id,arr,n,btn,cls)=>{let all=false;cards($(id),arr,n,cls);const b=btn&&$(btn);if(b)b.onclick=()=>{all=!all;cards($(id),arr,all?arr.length:n,cls);b.textContent=b.textContent.replace(all?'Show More':'Show Less',all?'Show Less':'Show More')}};
+sec('#ach',AC,3,'#am');sec('#hk',HK,4,null,'ht');
+let flt='all',pall=false;const pb=$('#pm');
+function drawPJ(){const a=PJ.filter(p=>flt=='all'||p.c.split(' ').includes(flt));cards($('#pj'),a,pall?a.length:6);pb.style.display=a.length>6?'block':'none';pb.textContent=pall?'Show Less Projects':'Show More Projects'}
+pb.onclick=()=>{pall=!pall;drawPJ()};
+$('#fl').onclick=e=>{const b=e.target.closest('button');if(!b)return;flt=b.dataset.f;pall=false;document.querySelectorAll('#fl button').forEach(x=>x.classList.toggle('on',x==b));drawPJ()};
+drawPJ();
+const pill=a=>a.map(x=>`<span class="pl">${x}</span>`).join('');
+$('#r1').innerHTML=pill(SK.slice(0,10)).repeat(4);$('#r2').innerHTML=pill(SK.slice(10)).repeat(4);
+const m=$('#m'),mc=$('#mc'),cl=()=>{m.classList.remove('on');mc.innerHTML=''};
+document.body.addEventListener('click',e=>{const c=e.target.closest('[data-k]');if(!c)return;const p=reg[c.dataset.k],id=p.media&&yt(p.media);
+ mc.innerHTML=`<h3>${p.t}</h3><div class="mt">${p.o} | ${p.y}</div>${id?`<iframe src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen title="${p.t}"></iframe>`:(p.media?`<img src="${p.media}" alt="${p.t}">`:'')}<p>${p.d}</p>`;m.classList.add('on')});
+m.onclick=e=>{if(e.target==m||e.target.classList.contains('x'))cl()};addEventListener('keydown',e=>e.key=='Escape'&&cl());
+/* nav + scroll bar */
+const nv=$('#nv'),sb=$('#sb');
+function sc(){nv.classList.toggle('s',scrollY>40);const h=document.documentElement.scrollHeight-innerHeight,r=innerHeight/document.documentElement.scrollHeight;sb.style.height=Math.max(r*100,6)+'vh';sb.style.top=(h?scrollY/h*(1-r)*100:0)+'vh'}
+addEventListener('scroll',sc);sc();
+/* stars */
+const cv=$('#st'),x=cv.getContext('2d');let S=[];
+function rs(){cv.width=innerWidth;cv.height=innerHeight;S=Array.from({length:140},()=>[Math.random()*cv.width,Math.random()*cv.height,Math.random()*1.4+.3,Math.random()*.5+.15,Math.random()*6])}
+addEventListener('resize',rs);rs();
+(function f(t){x.clearRect(0,0,cv.width,cv.height);for(const s of S){x.fillStyle=`rgba(190,210,255,${s[3]*(.6+.4*Math.sin(t/1400+s[4]))})`;x.fillRect(s[0],s[1],s[2],s[2])}requestAnimationFrame(f)})(0);
+</script>
 </body>
 </html>
